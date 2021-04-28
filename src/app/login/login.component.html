@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+      <div class="row d-flex">
+          <div class="col-lg-6">
+              <div class="card1 pb-1">
+                  <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="../../assets/images/Samsung-Hand.png" class="image"> </div>
+              </div>
+
+          </div>
+          <div class="col-lg-6 mt-5">
+              <div class="card2 card border-0 px-4 py-5">
+
+                 <form   [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                  <div class="row px-3"> <label class="mb-1">
+                          <h6 class="mb-0 text-sm">Adresse email</h6>
+                      </label> <input class="mb-4" type="email" name="email" placeholder="Entrez votre email"  [(ngModel)]="model.email" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  id="email" class="form-control"  required>
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                    </div>
+                  <div class="row px-3"> <label class="mb-1">
+                          <h6 class="mb-0 text-sm">Mot de passe</h6>
+                      </label> <input     type="password" name="password"   id="password"  [(ngModel)]="model.password"
+                      formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                    </div>
+
+
+                  <div class="row mb-3 mt-3 px-3 "> <button type="submit" class="btn btn-success text-center">Login</button> </div>
+
+                  <div class="row mb-4 px-3"> <small class="font-weight-bold">Vous n'avez pas un compte? <a class="text-success " routerLink="/sign-up">Inscription</a></small> </div>
+                  <div class="row mb-4 px-3"> <small class="font-weight-bold">Vous avez oublier votre mot de passe? <a class="text-success " routerLink="/reset-password">Mot de passe oublier</a></small> </div>
+
+                  
+
+                </form >
+
+                </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

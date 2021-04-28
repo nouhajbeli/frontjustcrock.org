@@ -1,0 +1,21 @@
+.card0 {
+    box-shadow: 0px 4px 8px 0px #757575;
+    border-radius: 0px
+}
+img{
+    height: 180px;
+}
+.card1{
+    height: 400px;
+    width: 100%!important;
+}
+
+@media screen and (max-width: 1000px) {
+
+    img{
+        height:250px;
+    }
+    .card1{
+        height: 450px;
+    }
+}

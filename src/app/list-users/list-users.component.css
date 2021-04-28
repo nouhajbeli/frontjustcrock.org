@@ -1,0 +1,16 @@
+table{
+    border-block-color:green;
+}
+  
+  .card0 {
+    box-shadow: 0px 4px 8px 0px #757575;
+    border-radius: 0px
+}
+@media screen and (max-width: 500px) {
+
+    .card0 {
+        box-shadow: 0px 4px 8px 0px #757575;
+        border-radius: 0px;
+        width: 180%;
+    }
+}

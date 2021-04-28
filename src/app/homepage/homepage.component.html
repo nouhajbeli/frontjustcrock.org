@@ -1,0 +1,520 @@
+<app-header></app-header>
+
+<section>
+  <div
+    id="carouselExampleControls"
+    class="carousel slide carousel-fade"
+    data-ride="carousel"
+    ride="true"
+    data-interval="3000"
+    wrap="true"
+  >
+    <div class="carousel-inner header-section">
+      <div class="carousel-item active">
+        <img
+          src="../../assets/images/slider1.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption first-slide">
+          <h3>Mosquée</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button>voir plus</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/images/slider.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption second-slide">
+          <h3>Finance islamique</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+            dolor sit amet consectetur .
+          </p>
+          <button>voir plus</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/images/slider3.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption third-slide">
+          <h3>Trouvez un Pro</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button>voir plus</button>
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="custom-icon">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<section class="search-section">
+  <p>Rechercher dans l'annuaire</p>
+  <div class="search-panel">
+    <input type="text" placeholder="Rechercher sur le web" />
+    <div class="img-holder">
+      <img src="../../assets/images/search-white.svg" alt="" />
+    </div>
+  </div>
+</section>
+
+<section class="pray-time">
+  <div class="search-box">
+    <p>Horaire de la prière en fonction de votre ville :</p>
+    <div class="search-input">
+      <img src="../../assets/images/search.svg" alt="" />
+      <input type="search" placeholder="ville..." />
+    </div>
+    <p>Temps restant avant la prochaine prière</p>
+    <p class="time-left">00:10:32</p>
+  </div>
+  <div class="prayers-group">
+    <div class="prayer first-pray">
+      <p>Fajr</p>
+      <p>{{ fajerTime(latUser, lngUser) }}</p>
+    </div>
+
+    <div class="prayer">
+      <p>Dohr</p>
+      <p>{{ dhuhrTime(latUser, lngUser) }}</p>
+    </div>
+    <div class="prayer">
+      <p>Asr</p>
+      <p>{{ asrTime(latUser, lngUser) }}</p>
+    </div>
+
+    <div class="prayer">
+      <p>Maghrib</p>
+      <p>{{ maghribTime(latUser, lngUser) }}</p>
+    </div>
+    <div class="prayer">
+      <p>Isha</p>
+      <p>{{ ishaTime(latUser, lngUser) }}</p>
+    </div>
+  </div>
+</section>
+<!-- top mosques section ----------------- -->
+<section class="top-mosques">
+  <div class="top-mosques-title">
+    <h3>Mosquée dans le monde</h3>
+    <p class="text-highlight">
+      <span class="text-highlight-left bg-gray text-highlight-w"></span>
+      <span class="text-highlight-circle bg-gray"></span>
+      <span class="text-highlight-circle bg-gray"></span>
+      <span class="text-highlight-circle bg-gray"></span>
+      <span class="text-highlight-right bg-gray text-highlight-w"></span>
+    </p>
+  </div>
+
+  <carousel
+    [height]="mosque_height"
+    [cellWidth]="mosque_cellwidth"
+    [loop]="loopCells"
+    [autoplay]="loopCells"
+  >
+    <div class="carousel-cell">
+      <div class="mosque-card">
+        <div class="img-container">
+          <img class="mosque-card-img" src="../../assets/images/mosque4.jpg" />
+        </div>
+        <div class="mosque-card-text">
+          <p>mosque sultan amat</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo rerum,
+            quas debitis quis, ab modi quisquam expedita ex ad ut laborum culpa
+            ipsum distinctio. Inventore?
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="mosque-card">
+        <div class="img-container">
+          <img class="mosque-card-img" src="../../assets/images/mosque1.jpg" />
+        </div>
+        <div class="mosque-card-text">
+          <p>mosque okba ibn nafaa kirouan tunisie</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur voluptate vel aliquid suscipit fuga eum illum placeat
+            natus odit, illo numquam quibusdam tenetur magni debitis?
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="mosque-card">
+        <div class="img-container">
+          <img class="mosque-card-img" src="../../assets/images/mosque3.jpg" />
+        </div>
+        <div class="mosque-card-text">
+          <p>mosque Sheikh Zayed - abou dabi uae</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            illum maxime autem exercitationem excepturi. Quisquam aut
+            consequuntur cumque maiores unde perspiciatis autem totam omnis quo.
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="mosque-card">
+        <div class="img-container">
+          <img class="mosque-card-img" src="../../assets/images/mosque2.jpg" />
+        </div>
+        <div class="mosque-card-text">
+          <p>mosque hasan 2 - casablanca maroc</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A qui nisi
+            totam optio est, hic voluptatem! Saepe incidunt vitae optio
+            perferendis voluptatibus mollitia, architecto neque?
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+  </carousel>
+</section>
+
+<!-- end of top mosques section ----------------- -->
+
+<section class="details">
+  <div class="details-header">
+    <h2>Découvrez notre application mobile SALAT</h2>
+    <p>
+      L'application jsutcrok vous aide à trouver la mosquée la plus proche, à
+      lire / écouter le Coran, à vérifier l'heure de la prière chez vous, à
+      trouver une mosquée ou à regarder la Mecque en direc...
+    </p>
+  </div>
+  <div class="details-content">
+    <div class="details-cards">
+      <div class="two-cards">
+        <div class="detail-card">
+          <img src="../../assets/images/pray-time.svg" alt="" />
+          <div class="card-text">
+            <h4>Horaire de la prière</h4>
+            <p>
+              Trouver l’horaire de la prière calculé selon votre géolocalisation
+            </p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <img src="../../assets/images/mecca.svg" alt="" />
+          <div class="card-text">
+            <h4>Mecque Live</h4>
+            <p>Regarder et écouter la Mecque en LIVE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-cards">
+        <div class="detail-card">
+          <img src="../../assets/images/find-mosque.svg" alt="" />
+          <div class="card-text">
+            <h4>Trouver une mosquée</h4>
+            <p>Trouver la mosquée la plus proche selon sa position</p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <img src="../../assets/images/reciter.svg" alt="" />
+          <div class="card-text">
+            <h4>Les récitateurs</h4>
+            <p>Ecouter des récitations du Coran avec les plus belles voix</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-cards">
+        <div class="detail-card">
+          <img src="../../assets/images/playlist.svg" alt="" />
+          <div class="card-text">
+            <h4>Lire le Coran</h4>
+            <p>Lire le Coran et l’écouter en plusieurs langues</p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <img src="../../assets/images/kibla.svg" alt="" />
+          <div class="card-text">
+            <h4>Trouver la Qibla</h4>
+            <p>Trouver facilement la direction de la Qibla</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="down-btn">Télécharger l'application</a>
+    </div>
+
+    <img class="phone-img" src="../../assets/images/mobile-mockup.png" alt="" />
+  </div>
+</section>
+
+<!-- Commerce section -->
+<section class="commerce-section">
+  <div class="top-commerce-title">
+    <h3>Trouvez un commerce pro halal</h3>
+    <p class="text-highlight-white">
+      <span class="text-highlight-left bg-white text-highlight-w"></span>
+      <span class="text-highlight-circle bg-white"></span>
+      <span class="text-highlight-circle bg-white"></span>
+      <span class="text-highlight-circle bg-white"></span>
+      <span class="text-highlight-right bg-white text-highlight-w"></span>
+    </p>
+  </div>
+  <carousel
+    [height]="commerce_height"
+    [cellWidth]="commerce_cellwidth"
+    [loop]="loopCells"
+    [autoplay]="loopCells"
+  >
+    <div class="carousel-cell">
+      <div class="commerce-card">
+        <div class="commerce-img-container">
+          <img
+            class="commerce-card-img"
+            src="../../assets/images/commerce2.jpg"
+          />
+        </div>
+        <div class="commerce-card-text">
+          <p>your title here</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, velit
+            iure id illum corporis esse explicabo modi molestiae culpa
+            laudantium doloremque aspernatur autem eligendi voluptates alias
+            accusamus libero maxime enim animi dolorem itaque perferendis illo?
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="commerce-card">
+        <div class="commerce-img-container">
+          <img
+            class="commerce-card-img"
+            src="../../assets/images/commerce1.jpg"
+          />
+        </div>
+        <div class="commerce-card-text">
+          <p>your title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+            modi delectus quo ipsum dignissimos ipsam velit, harum amet, aliquam
+            aut iure natus dicta consectetur tempore veniam necessitatibus.
+            Dignissimos quod modi excepturi architecto enim nemo blanditiis?
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="commerce-card">
+        <div class="commerce-img-container">
+          <img
+            class="commerce-card-img"
+            src="../../assets/images/commerce2.jpg"
+          />
+        </div>
+        <div class="commerce-card-text">
+          <p>your title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cum
+            itaque nihil quaerat eaque? Quas laudantium dolores quisquam velit
+            recusandae laboriosam eaque nisi, consectetur neque magnam, sint
+            eius temporibus necessitatibus, vero natus ipsum adipisci sed.
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="commerce-card">
+        <div class="commerce-img-container">
+          <img
+            class="commerce-card-img"
+            src="../../assets/images/commerce1.jpg"
+          />
+        </div>
+        <div class="commerce-card-text">
+          <p>your title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste,
+            commodi doloremque minima ducimus, totam nulla, ipsam cum dolorum at
+            corporis eos voluptatibus. Neque illum omnis iusto eaque recusandae
+            autem, exercitationem iure praesentium ab voluptate obcaecati!
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </div>
+    </div>
+  </carousel>
+</section>
+
+<section class="finance-section">
+  <div class="top-mosques-title">
+    <h3>Finance Islamique</h3>
+    <p class="text-highlight">
+      <span class="text-highlight-left bg-gray text-highlight-w2"></span>
+      <span class="text-highlight-circle bg-gray"></span>
+      <span class="text-highlight-circle bg-gray"></span>
+      <span class="text-highlight-circle bg-gray"></span>
+      <span class="text-highlight-right bg-gray text-highlight-w2"></span>
+    </p>
+  </div>
+
+  <carousel
+    [height]="mosque_height"
+    [cellWidth]="mosque_cellwidth"
+    [loop]="loopCells"
+    [autoplay]="loopCells"
+  >
+    <div class="carousel-cell">
+      <div class="finance-card">
+        <div class="finance-img-container">
+          <img
+            class="finance-card-img"
+            src="https://fabskill.com//assets/img/bus-logo/cropped/32_1544218402.png"
+          />
+        </div>
+        <div class="finance-card-text">
+          <p>place a title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            maiores necessitatibus provident mollitia maxime doloribus, at a
+            quae, ad eum aliquam incidunt reprehenderit neque alias eos totam!
+            Cupiditate nobis officiis voluptate deleniti aperiam fuga
+            consequuntur?
+          </p>
+          <button class="finance-button">
+            <span>En savoir plus</span>
+            <img src="../../assets/images/right-arrow.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="finance-card">
+        <div class="finance-img-container">
+          <img
+            class="finance-card-img"
+            src="https://fabskill.com//assets/img/bus-logo/cropped/32_1544218402.png"
+          />
+        </div>
+        <div class="finance-card-text">
+          <p>place a title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            maiores necessitatibus provident mollitia maxime doloribus, at a
+            quae, ad eum aliquam incidunt reprehenderit neque alias eos totam!
+            Cupiditate nobis officiis voluptate deleniti aperiam fuga
+            consequuntur?
+          </p>
+          <button class="finance-button">
+            <span>En savoir plus</span>
+            <img src="../../assets/images/right-arrow.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="finance-card">
+        <div class="finance-img-container">
+          <img
+            class="finance-card-img"
+            src="https://fabskill.com//assets/img/bus-logo/cropped/32_1544218402.png"
+          />
+        </div>
+        <div class="finance-card-text">
+          <p>place a title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            maiores necessitatibus provident mollitia maxime doloribus, at a
+            quae, ad eum aliquam incidunt reprehenderit neque alias eos totam!
+            Cupiditate nobis officiis voluptate deleniti aperiam fuga
+            consequuntur?
+          </p>
+          <button class="finance-button">
+            <span>En savoir plus</span>
+            <img src="../../assets/images/right-arrow.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="finance-card">
+        <div class="finance-img-container">
+          <img
+            class="finance-card-img"
+            src="https://fabskill.com//assets/img/bus-logo/cropped/32_1544218402.png"
+          />
+        </div>
+        <div class="finance-card-text">
+          <p>place a title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            maiores necessitatibus provident mollitia maxime doloribus, at a
+            quae, ad eum aliquam incidunt reprehenderit neque alias eos totam!
+            Cupiditate nobis officiis voluptate deleniti aperiam fuga
+            consequuntur?
+          </p>
+          <button class="finance-button">
+            <span>En savoir plus</span>
+            <img src="../../assets/images/right-arrow.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div class="finance-card">
+        <div class="finance-img-container">
+          <img
+            class="finance-card-img"
+            src="https://fabskill.com//assets/img/bus-logo/cropped/32_1544218402.png"
+          />
+        </div>
+        <div class="finance-card-text">
+          <p>place a title here</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            maiores necessitatibus provident mollitia maxime doloribus, at a
+            quae, ad eum aliquam incidunt reprehenderit neque alias eos totam!
+            Cupiditate nobis officiis voluptate deleniti aperiam fuga
+            consequuntur?
+          </p>
+          <button class="finance-button">
+            <span>En savoir plus</span>
+            <img src="../../assets/images/right-arrow.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </carousel>
+</section>
+<app-footer></app-footer>

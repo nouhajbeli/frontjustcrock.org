@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  max-width: 1500px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background-color: #363636;
+}
+a {
+  text-decoration: none;
+  color: blue;
+
+}
+a:hover{
+  color: #01a67c;
+}
+.search-bar {
+  background-color: #217e66;
+  width: 100%;
+  padding: 20px;
+}
+
+.search-input {
+  display: flex;
+  background-color: #ebebeb;
+  border-radius: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding-left: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+.search-input > img {
+  height: 35px;
+}
+.search-input > input {
+  background-color: #ebebeb;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+  width: 100%;
+}
+
+.main-content {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.map-section {
+  min-height: 60vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.map {
+  height: 300px;
+  width: 100%;
+  background-color: #ebebeb;
+  z-index: 1;
+}
+.table-section {
+  background-color: #ebebeb;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+/* info  ------------------------------------------------ */
+.high-text {
+  color: #01a67c;
+}
+.info {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebebeb;
+  width: 100%;
+  max-width: 450px;
+  /* height: 100px; */
+  margin-bottom: 20px;
+}
+.info-block-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-block-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-block-one > img {
+  width: 90%;
+  margin: 10px;
+}
+.info-block-one > p {
+  padding: 20px;
+}
+.info-block {
+  padding: 10px;
+  display: flex;
+  /* align-items: center; */
+  width: 100%;
+}
+
+.info-block > img {
+  height: 35px;
+  margin-right: 10px;
+}
+
+.pray-times {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.single-prayer {
+  border-bottom: 1px solid #01a67c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.single-prayer > p {
+  margin: 10px;
+}
+.premium-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+.premium-button > a {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  background-color: #01a67c;
+  padding: 10px 50px;
+  border-radius: 25px;
+  margin: 10px;
+}
+.premium-button > p {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #838383;
+  padding: 0 20px;
+  line-height: 1.5rem;
+}
+.arrow-sign {
+  font-size: 1.2rem;
+}
+.map-links {
+  background-color: #b9b8b8;
+  color: #363636;
+  padding: 5px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 768px) {
+  .info {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+  }
+  .main-content {
+    flex-direction: column-reverse;
+  }
+  .info-block-one {
+    flex: 1;
+  }
+  .info-block-two {
+    flex: 1;
+  }
+
+  .info-block {
+    padding: 5px 10px;
+  }
+  .map {
+    height: 300px;
+    width: 80%;
+    background-color: #ebebeb;
+  }
+  .table-section {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .info {
+    margin-top: 10px;
+    max-width: 40%;
+  }
+  .info,
+  .info-block-one,
+  .info-block-two {
+    flex-direction: column;
+  }
+  .map-section {
+    margin: 10px;
+    align-items: center;
+  }
+  .map {
+    height: 80vh;
+    width: 100%;
+    background-color: #ebebeb;
+  }
+  .table-section {
+    width: 100%;
+  }
+  .pray-times {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .single-prayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+  .single-prayer > p {
+    margin: 0;
+  }
+}
+.imageMosque{
+  width: 400px!important;
+  height: 250px!important;
+}

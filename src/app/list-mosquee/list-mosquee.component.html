@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row mt-5">
+            <div class="col-4 mx-auto">
+                <input class="form-control" type="text" [(ngModel)]="userFilter.adresse" placeholder="Entrez adresse ...">
+                <div  style="margin-left:20%;margin-top:7px;display:flex;justify-content:space-between" class="form-group col-md-6">
+                  <select style="width:150px;"
+                    name="code"
+                    class="form-control"
+                    [(ngModel)]="code"
+                    required
+                    (change)="onSelectC($event)"
+                  >
+                  <!-- <option  default >Choisir le Continent</option> -->
+
+                    <option  selected   value="af" >Afrique</option>
+                    <option value="eu" >Europe</option>
+                    <option value="as"  >Asie</option>
+                    <option value="na" >Amerique du Nord</option>
+                    <option value="sa" >Amerique du sud</option>
+                  </select>
+                  <!-- <a >Cliquer pour voir vos mosquees  </a> -->
+                  <input class="btn btn-primary" style="background-color: #17A589 ;" (click)="getAllMosquee(this.code)" type="submit" value="Submit">
+                </div>
+
+              </div>
+        </div>
+        <div class="container">
+
+
+        <div class="row mt-4 mb-4">
+            <div class="col-lg-3 mx-auto  mt-2" *ngFor="let mosquee of mosquees | filterBy: userFilter | paginate: { itemsPerPage: 8, currentPage: p } ">
+                <div class="card card1">
+                    <img class="card-img-top" src="{{mosquee.imageUrl}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mosquee.name}}</h5>
+                        <p>Adresse : {{mosquee.adresse}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <a class="btn btn-success" (click)="details(mosquee.id)">Détails</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,578 @@
+<header
+  class="l-header"
+  [ngClass]="isExpanded ? 'sidebar-is-expanded test2' : 'sidebar-is-reduced'"
+>
+  <div class="l-header__inner clearfix">
+    <div class="c-header-icon js-hamburger" (click)="toggleClass()">
+      <div class="hamburger-toggle" [ngClass]="isExpanded ? 'is-opened' : ''" >
+        <span class="bar-top"></span><span class="bar-mid"></span
+        ><span class="bar-bot"></span>
+      </div>
+    </div>
+
+    <div class="c-search">
+      <input
+        class="c-search__input u-input"
+        placeholder="Search..."
+        type="text"
+        ngModel
+        (ngModelChange)="search($event)"
+      />
+    </div>
+    <div class="header-icons-group">
+      <div class="c-header-icon logout" (click)="Logout()">
+        <i class="fa fa-power-off"></i>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="l-sidebar" [ngClass]="isExpanded ? 'test' : ''" >
+  <div class="logo">
+    <div class="logo__txt">
+      <img style="width:80px" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1618400646/justcrokorg-07_yj6cwi.png" />
+    </div>
+  </div>
+  <div class="l-sidebar__content">
+    <nav class="c-menu js-menu">
+      <ul class="u-list">
+        <li
+          class="c-menu__item"
+          data-toggle="tooltip"
+          title="amerique du nord"
+          (click)="changeDisplay('ameriqueN')"
+        >
+          <div class="c-menu__item__inner">
+            <img  style="width:27px;margin-left: 22px" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1618899623/continent_icons-02_1_xpv9ud.svg">
+            <div style="margin-left:24px" class="c-menu-item__title"><span>Amerique du nord</span></div>
+          </div>
+        </li>
+        <li
+        class="c-menu__item"
+        data-toggle="tooltip"
+        title="amerique du sud"
+        (click)="changeDisplay('ameriqueS')"
+      >
+        <div class="c-menu__item__inner">
+          <img  style="width:27px;margin-left: 22px" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1618899638/continent_icons-03_cbbghi.svg">
+          <div style="margin-left:24px" class="c-menu-item__title"><span>Amerique du sud</span></div>
+        </div>
+      </li>
+        <li
+        class="c-menu__item"
+        data-toggle="tooltip"
+        title="Europe"
+        (click)="changeDisplay('Europe')"
+      >
+        <div class="c-menu__item__inner">
+          <img  style="width:27px;margin-left: 22px" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1618839392/continent_icons-01_be66th.svg">
+          <!-- <i class="far fa-globe-europe"></i> -->
+                <div style="margin-left:24px" class="c-menu-item__title"><span>Europe</span></div>
+        </div>
+      </li>
+        <li
+          class="c-menu__item"
+          data-toggle="tooltip"
+          title="Asia"
+          (click)="changeDisplay('Asia')"
+        >
+          <div class="c-menu__item__inner">
+            <i class="fal fa-globe-asia"></i>
+            <div class="c-menu-item__title"><span>Asia</span></div>
+          </div>
+        </li>
+        <li
+        class="c-menu__item"
+        data-toggle="tooltip"
+        title="Afrique"
+        (click)="changeDisplay('Afrique')"
+      >
+        <div class="c-menu__item__inner">
+          <i class="fas fa-globe-africa"></i>
+     <div class="c-menu-item__title"><span>Afrique</span></div>
+        </div>
+      </li>
+        <li
+          (click)="changeDisplay('users')"
+          class="c-menu__item has-submenu"
+          data-toggle="tooltip"
+          title="users"
+        >
+          <div class="c-menu__item__inner">
+               <i class="far fa-users"></i>
+            <div class="c-menu-item__title"><span>Users</span></div>
+          </div>
+        </li>
+
+        <li
+          (click)="changeDisplay('proprietaires')"
+          class="c-menu__item has-submenu"
+          data-toggle="tooltip"
+          title="Proprietaires"
+        >
+          <div class="c-menu__item__inner">
+              <i class="far fa-users"></i>
+            <div class="c-menu-item__title"><span>Proprietaires</span></div>
+          </div>
+        </li>
+        <li
+          (click)="changeDisplay('webmaster')"
+          class="c-menu__item has-submenu"
+          data-toggle="tooltip"
+          title="Web Masters"
+        >
+          <div class="c-menu__item__inner">
+            <i class="far fa-users"></i>
+            <div class="c-menu-item__title"><span>Web Masters</span></div>
+          </div>
+        </li>
+        <li
+          class="c-menu__item has-submenu"
+          data-toggle="tooltip"
+          title="Settings"
+        >
+          <div class="c-menu__item__inner">
+            <i class="fa fa-cogs"></i>
+            <div class="c-menu-item__title"><span>Settings</span></div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div
+  style="margin: 7%"
+  id="content"
+  [ngClass]="
+    isExpanded
+      ? 'sidebar-is-expanded content-expanded'
+      : 'sidebar-is-reduced content-reduced'
+  "
+>
+  <div *ngIf="display === 'proprietaires'">
+    <h1>Proprietaires</h1>
+
+
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3>Username</h3>
+      <h3 style="position: absolute; left: 30%">Email</h3>
+      <h3 style="position: absolute; left: 65%">Status</h3>
+      <h3 style="position: absolute; left: 85%">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let user of result || proprietaires">
+      <h3 (click)="getProfileP(user.id)" class="clickable">
+        {{ user.username }}
+      </h3>
+      <h3 style="position: absolute; left: 30%">{{ user.email }}</h3>
+      <h3 style="position: absolute; left: 65%">{{ user.status }}</h3>
+      <i class="fa fa-user" aria-hidden="true"
+      *ngIf="user.status === 'blocked'"
+      title="activer"
+
+      alt="activer" (click)="changeStatus(user.id, user.role, 'active')"
+      style="
+        position: absolute;
+        left: 86%;
+        margin-top: 0.7%;
+        border: 0px;
+        color: rgb(100, 212, 100);
+        width: 70px;
+        height: 40px;
+      "></i>
+ <i *ngIf="user.status === 'active'"
+ title="blocker"
+
+ (click)="changeStatus(user.id, user.role, 'blocked')"
+        style="
+          position: absolute;
+          left: 86%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "class="fa fa-ban" alt="bloquer"> </i>
+         <i       title="supprimer"
+         class="fa fa-trash"
+         (click)="deleteProp(user.id)" alt="supprimer"
+         style="
+           position: absolute;
+           left: 88%;
+           margin-top: 0.7%;
+           border: 0px;
+           color: red;
+           width: 70px;
+           height: 40px;
+         "
+       >
+     </i>
+     <i       title="modifier"
+     class="fa fa-pencil-square-o" aria-hidden="true"  (click)="editProprietaire(user.id)"
+     style="
+       position: absolute;
+       left: 90%;
+       margin-top: 0.7%;
+       border: 0px;
+       color:  rgb(100, 212, 100);
+       width: 70px;
+       height: 40px;
+     "></i>
+    </div>
+
+    <!-- Students -->
+  </div>
+
+  <!-- students -->
+  <div *ngIf="display === 'users'" >
+    <h1>Users</h1>
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3>Username</h3>
+      <h3 style="position: absolute; left: 30%">Email</h3>
+      <h3 style="position: absolute; left: 65%">Status</h3>
+      <h3 style="position: absolute; left: 85%">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let user of result||  users">
+      <h3 (click)="getProfile(user.id)" class="clickable">
+        {{ user.fullName }}
+      </h3>
+      <h3 style="position: absolute; left: 30%">{{ user.email }}</h3>
+      <h3 style="position: absolute; left: 65%">{{ user.status }}</h3>
+      <i class="fa fa-user" aria-hidden="true"
+      *ngIf="user.status === 'blocked'"
+      title="activer"
+
+      alt="activer" (click)="changeStatus(user.id, user.role, 'active')"
+      style="
+        position: absolute;
+        left: 86%;
+        margin-top: 0.7%;
+        border: 0px;
+        color: #64d464;
+        width: 70px;
+        height: 40px;
+      "></i>
+ <i         *ngIf="user.status === 'active'"
+ title="blocker"
+
+ (click)="changeStatus(user.id, user.role, 'blocked')"
+        style="
+          position: absolute;
+          left: 86%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "class="fa fa-ban" alt="bloquer"> </i>
+         <i        title="supprimer"
+         class="fa fa-trash"
+         (click)="deleteuser(user.id)" alt="supprimer"
+         style="
+           position: absolute;
+           left: 88%;
+           margin-top: 0.7%;
+           border: 0px;
+           color: red;
+           width: 70px;
+           height: 40px;
+         "
+       >
+     </i>
+     <i       title="modifier"
+      class="fa fa-pencil-square-o" aria-hidden="true"  (click)="edituser(user.id)"
+     style="
+       position: absolute;
+       left: 90%;
+       margin-top: 0.7%;
+       border: 0px;
+       color:  rgb(100, 212, 100);
+       width: 70px;
+       height: 40px;
+     "></i>
+    </div>
+  </div>
+  <i   style="
+  position: absolute;
+  left: 88%;
+  margin-top: 0.05%;
+  border: 0px;
+  color: rgb(100, 212, 100);
+  width: 270px;
+  height: 240px;
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'webmaster'" (click)="ajoutUser()"> Ajouter Web Master</i>
+  <div *ngIf="display === 'webmaster'" >
+    <h1>Web Masters</h1>
+
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3>Username</h3>
+      <h3 style="position: absolute; left: 30%">Email</h3>
+      <h3 style="position: absolute; left: 65%">Status</h3>
+      <h3 style="position: absolute; left: 85%">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let user of result|| webmasters">
+      <h3 (click)="getProfile(user.id)" class="clickable">
+        {{ user.fullName }}
+      </h3>
+      <h3 style="position: absolute; left: 30%">{{ user.email }}</h3>
+      <h3 style="position: absolute; left: 65%">{{ user.status }}</h3>
+      <i class="fa fa-user" aria-hidden="true"
+      *ngIf="user.status === 'blocked'"
+      title="activer"
+
+      alt="activer" (click)="changeStatus(user.id, user.role, 'active')"
+      style="
+        position: absolute;
+        left: 86%;
+        margin-top: 0.7%;
+        border: 0px;
+        color: #64d464;
+        width: 70px;
+        height: 40px;
+      "></i>
+ <i         *ngIf="user.status === 'active'"
+ title="blocker"
+
+ (click)="changeStatus(user.id, user.role, 'blocked')"
+        style="
+          position: absolute;
+          left: 86%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "class="fa fa-ban" alt="bloquer"> </i>
+         <i       title="supprimer"
+         class="fa fa-trash"
+         (click)="deleteWebmaster(user.id)" alt="supprimer"
+         style="
+           position: absolute;
+           left: 88%;
+           margin-top: 0.7%;
+           border: 0px;
+           color: red;
+           width: 70px;
+           height: 40px;
+         "
+       >
+     </i>
+     <i       title="modifier"
+     class="fa fa-pencil-square-o" aria-hidden="true"  (click)="edituser(user.id)"
+     style="
+       position: absolute;
+       left: 90%;
+       margin-top: 0.7%;
+       border: 0px;
+       color:  rgb(100, 212, 100);
+       width: 70px;
+       height: 40px;
+     "></i>
+    </div>
+  </div>
+  <!-- courses -->
+  <div *ngIf="display === 'Afrique'" >
+    <h1>Afrique</h1>
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #585d66">
+      <h3 style="width:300px">Nom Moquee</h3>
+      <h3 style="position: absolute; left: 40% ;width:100px">Proprietaire</h3>
+      <h3 style="position: absolute; left: 65%;width:200px">Adresse</h3>
+      <h3 style="position: absolute; left: 85%; width:100px">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let mosquee of result || mosqueesAf">
+      <h3 (click)="getMosqueeAf(mosquee.id)" class="clickable" style="width:300px">
+        {{ mosquee.nomMosquee }}
+      </h3>
+      <h3 style="position: absolute; left: 40% ;width:100px">
+        {{ mosquee.UserId }}
+      </h3>
+      <h3 style="position: absolute; left: 65%;width:200px">{{ mosquee.street }}</h3>
+
+
+
+      <i  class="fa fa-trash" (click)="deleteMosqueeAf(mosquee.id)" style=" position: absolute;  left: 87%; margin-top: 0.7%; border: 0px;  color: red;
+          width: 70px;
+          height: 40px;
+        "
+      ></i>
+      <i class="fa fa-pencil-square-o"   (click)="editMosqueeAf(mosquee.id)"
+      style=" position: absolute;  left: 90%; margin-top: 0.7%; border: 0px;color:  rgb(100, 212, 100); width: 70px;height: 40px"></i>
+    </div>
+  </div>
+  <div *ngIf="display === 'Europe'" >
+    <h1 style="width:300px">Europe</h1>
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3>Nom Moquee</h3>
+      <h3 style="position: absolute; left: 40% ; width:100px"> Proprietaire</h3>
+      <h3 style="position: absolute; left: 65% ; width:200px">Adresse</h3>
+      <h3 style="position: absolute; left: 85% ; width:100px">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let mosquee of result || mosqueesEu">
+      <h3 (click)="getMosqueeEu(mosquee.id)" class="clickable" style="width:300px">
+        {{ mosquee.nomMosquee }}
+      </h3>
+      <h3 style="position: absolute; left: 40% ; width:100px">
+        {{ mosquee.UserId }}
+      </h3>
+      <h3 style="position: absolute; left: 65% ; width:200px">{{ mosquee.street }}</h3>
+
+      <i  class="fa fa-trash"
+        (click)="deleteMosqueeEu(mosquee.id)"
+        style="
+          position: absolute;
+          left: 87%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "
+      >
+    </i>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"  (click)="editMosqueeEu(mosquee.id)"
+      style="
+        position: absolute;
+        left: 90%;
+        margin-top: 0.7%;
+        border: 0px;
+        color:  rgb(100, 212, 100);
+        width: 70px;
+        height: 40px;
+      "></i>
+    </div>
+  </div>
+
+  <div *ngIf="display === 'Asia'" >
+    <h1 >Asie</h1>
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3 style="width:300px">Nom Moquee</h3>
+      <h3 style="position: absolute; left: 40% ;width:100px"> Proprietaire</h3>
+      <h3 style="position: absolute; left: 65% ;width:200px">Adresse</h3>
+      <h3 style="position: absolute; left: 85% ;width:100px">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let mosquee of result || mosqueesAs">
+      <h3 (click)="getMosqueeAs(mosquee.id)" class="clickable" style="width:300px">
+        {{ mosquee.nomMosquee }}
+      </h3>
+      <h3 style="position: absolute; left: 40% ;width:100px">
+        {{ mosquee.UserId }}
+      </h3>
+      <h3 style="position: absolute; left: 65% ;width:200px">{{ mosquee.street }}</h3>
+
+      <i  class="fa fa-trash"
+        (click)="deleteMosqueeAs(mosquee.id)"
+        style="
+          position: absolute;
+          left: 87%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "
+      >
+    </i>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"  (click)="editMosqueeAs(mosquee.id)"
+    style="
+      position: absolute;
+      left: 90%;
+      margin-top: 0.7%;
+      border: 0px;
+      color:  rgb(100, 212, 100);
+      width: 70px;
+      height: 40px;
+    "></i>
+    </div>
+  </div>
+  <div *ngIf="display === 'ameriqueN'" >
+    <h1>Amerique du Nord</h1>
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3 style="width:300px">Nom Moquee</h3>
+      <h3 style="position: absolute; left: 40% ;width:100px"> Proprietaire</h3>
+      <h3 style="position: absolute; left: 65%;width:200px">Adresse</h3>
+      <h3 style="position: absolute; left: 85%;width:100px">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let mosquee of result || mosqueesAmN">
+      <h3 (click)="getMosqueeAmN(mosquee.id)" class="clickable" style="width:300px">
+        {{ mosquee.nomMosquee }}
+      </h3>
+      <h3 style="position: absolute; left: 40% ;width:100px">
+        {{ mosquee.UserId }}
+      </h3>
+      <h3 style="position: absolute; left: 65%;width:200px">{{ mosquee.street }}</h3>
+
+      <i  class="fa fa-trash"
+        (click)="deleteMosqueeAmN(mosquee.id)"
+        style="
+          position: absolute;
+          left: 87%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "
+      >
+    </i>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"  (click)="editMosqueeAmN(mosquee.id)"
+      style="
+        position: absolute;
+        left: 90%;
+        margin-top: 0.7%;
+        border: 0px;
+        color:  rgb(100, 212, 100);
+        width: 70px;
+        height: 40px;
+      "></i>
+    </div>
+  </div>
+  <!-- chart -->
+  <div *ngIf="display === 'ameriqueS'" >
+    <h1>Amerique du Sud</h1>
+    <div style="border: 1px solid gray; margin: 2%"></div>
+    <div style="margin: 10px; display: flex; color: #102c58">
+      <h3 style="width:300px">Nom Moquee</h3>
+      <h3 style="position: absolute; left: 40% ;width:100px"> Proprietaire</h3>
+      <h3 style="position: absolute; left: 65%;width:200px">Adresse</h3>
+      <h3 style="position: absolute; left: 85%;width:100px">Action</h3>
+    </div>
+    <div class="row-element" *ngFor="let mosquee of result || mosqueesAmS">
+      <h3 (click)="getMosqueeAmS(mosquee.id)" class="clickable" style="width:300px">
+        {{ mosquee.nomMosquee }}
+      </h3>
+      <h3 style="position: absolute; left: 40% ;width:100px">
+        {{ mosquee.UserId }}
+      </h3>
+      <h3 style="position: absolute; left: 65%;width:200px">{{ mosquee.street }}</h3>
+
+      <i  class="fa fa-trash"
+        (click)="deleteMosqueeAmS(mosquee.id)"
+        style="
+          position: absolute;
+          left: 87%;
+          margin-top: 0.7%;
+          border: 0px;
+          color: red;
+          width: 70px;
+          height: 40px;
+        "
+      >
+    </i>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"  (click)="editMosqueeAmS(mosquee.id)"
+      style="
+        position: absolute;
+        left: 90%;
+        margin-top: 0.7%;
+        border: 0px;
+        color:  rgb(100, 212, 100);
+        width: 70px;
+        height: 40px;
+      "></i>
+    </div>
+  </div>
+</div>

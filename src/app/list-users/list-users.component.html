@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row mt-5">
+            <div class="col-4 mx-auto">
+                <input class="form-control" type="text" [(ngModel)]="userFilter.prenom" placeholder="Prenom d'utilisateur">
+
+            </div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-8 mx-auto">
+
+                <table class="table table-borderless text-center mt-5 mb-5">
+                    <thead class="table-success">
+                        <tr>
+                            <th scope="col">Nom Association</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Téléphone</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of users | filterBy: userFilter | paginate: { itemsPerPage: 5, currentPage: p } ">
+                            <th scope="row">{{item.nomAssociation}}</th>
+                            <td>{{item.prenom}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.telephone}}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success" (click)="deleteUser(item.id) ">Supprimer</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

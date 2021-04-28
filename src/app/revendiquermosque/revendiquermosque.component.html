@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="cont" style="margin-bottom: 50vh">
+  <div class="row rev mt-5">
+    <h1 class="mt-3" style="color: #01a67c; text-align: center;"> <b> <i>Demande revendiquer {{mosque?.nomMosquee}}</i>
+      </b></h1>
+    <div class="col-md-8 col-md-offset-2 mx-auto mt-5">
+      <form action="" method="POST" [formGroup]="emailForm">
+        <div class="form-group mb-3">
+          <input type="text" formControlName="association" placeholder="Nom association" class="form-control"
+            name="association" [ngClass]="{ 'is-invalid': submitted && f.association.errors }" />
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" formControlName="president" placeholder="Nom président" class="form-control"
+            name="president" [ngClass]="{ 'is-invalid': submitted && f.president.errors }" />
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" placeholder="Prénom" formControlName="prenom" class="form-control" name="prenom"
+            [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }" />
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" formControlName="email" placeholder="email" class="form-control"
+            name="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" formControlName="adresse" placeholder="Adresse" class="form-control" name="adresse"
+            [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" formControlName="telephone" class="form-control" placeholder="Numéro téléphone"
+            name="telephone" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" />
+        </div>
+
+        <div class="form-group mb-3">
+          <input formControlName="piece" class="foo" accept=".pdf,.png,.jpeg" type="file" ng2FileSelect [uploader]="uploader2" multiple />
+          <hr>
+          <div class="drop-zone">
+            <div ng2FileDrop [uploader]="uploader2" style="min-height: 150px;
+                      border: 2px dashed #00B5B8;
+                      background: #F5F7FA;" class="drop-zone">
+              <h2 class="text-center mt-5">Glissez les documents d'identité</h2>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th width="100%">
+
+                </th>
+                <th width="10%">
+
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of uploader2.queue;let x=index">
+                <th width="100%">
+                  document
+                </th>
+                <th class="text-center" width="20%">
+                  <button type="button" class="btn btn-light" (click)="item.remove()">
+                    supprimer
+                  </button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <div class="alert alert-danger mt-3" *ngIf="fileOk == 'false'">
+            fichier échouée! envoyez seulement format pdf , png , jpeg
+          </div>
+        </div>
+        <div class="alert alert-warning mt-3" *ngIf="isOk == 'false'">
+          revendication échouée!
+        </div>
+        <div class="alert alert-success mt-3" *ngIf="isOk == 'true'">
+          revendication réussie!
+        </div>
+        <div class="row mx-auto mb-3">
+          <div class="col-12">
+            <button class="btn btn-success" (click)="sendMail()">Revendiquer</button>
+          </div>
+        </div>
+        <a  href="" (click)="retour()">--->Retour</a>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

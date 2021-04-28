@@ -1,0 +1,859 @@
+
+<!--           <div class="d-flex justify-content-center">
+            <h1>Selon votre position le temps du salat est</h1>    </div>
+            <div class="d-flex justify-content-center"><p>Fajer : {{fajerTime(latUser,lngUser)}}</p></div>
+            <div class="d-flex justify-content-center"><p>duhr : {{dhuhrTime(latUser,lngUser)}}</p></div>
+            <div class="d-flex justify-content-center"> <p>asr : {{asrTime(latUser,lngUser)}}</p></div>
+              <div class="d-flex justify-content-center"> <p>mag : {{maghribTime(latUser,lngUser)}}</p></div>
+                <div class="d-flex justify-content-center"> <p>isha : {{ishaTime(latUser,lngUser)}}</p></div>
+
+-->
+<app-header></app-header>
+
+
+                <div class="center" *ngIf="!!affiche">
+                   <mat-card class="example-card">
+                     <mat-card-header>
+                       <mat-card-title>Selon votre position le temps du salat est</mat-card-title>
+                     </mat-card-header>
+                     <mat-card-content>
+                       <p>
+                           Fajer :{{fajerTime(latUser,lngUser)}}
+                       </p>
+                       <p>
+                         Dhohr :{{dhuhrTime(latUser,lngUser)}}
+                     </p>
+                     <p>
+                         Asr : {{asrTime(latUser,lngUser)}}
+                     </p>
+                     <p>
+                         Modhreb : {{maghribTime(latUser,lngUser)}}
+                     </p>
+                     <p>
+                      Isha : {{ishaTime(latUser,lngUser)}}
+                     </p>
+                     </mat-card-content>
+                   </mat-card>
+                </div>
+
+
+<hr>
+<hr>
+
+       <!-- <div>
+          <p>Today is {{today | date}}</p>
+          <p>Or if you prefer, {{today | date:'fullDate'}}</p>
+          <p>The time is {{today | date:'h:mm a z'}}</p>
+        </div>-->
+        <div class="container">
+           <div class="row">
+             <div class="col mx-auto">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Temps Priere</mat-card-title>
+                  <mat-card-subtitle >{{villes[0].name}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      Fajer :{{fajerTime(villes[0].latitude,villes[0].longitude)}}
+                  </p>
+                  <p>
+                    Dhohr :{{dhuhrTime(villes[0].latitude,villes[0].longitude)}}
+                </p>
+                <p>
+                    Asr :{{asrTime(villes[0].latitude,villes[0].longitude)}}
+                </p>
+                <p>
+                    Modhreb :{{maghribTime(villes[0].latitude,villes[0].longitude)}}
+                </p>
+                <p>
+                    Isha :{{ishaTime(villes[0].latitude,villes[0].longitude)}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            <div class="col mx-auto">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Temps Priere</mat-card-title>
+                  <mat-card-subtitle>{{villes[1].name}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      Fajer :{{fajerTime(villes[1].latitude,villes[1].longitude)}}
+                  </p>
+                  <p>
+                    Dhohr :{{dhuhrTime(villes[1].latitude,villes[1].longitude)}}
+                </p>
+                <p>
+                    Asr :{{asrTime(villes[1].latitude,villes[1].longitude)}}
+                </p>
+                <p>
+                    Modhreb :{{maghribTime(villes[1].latitude,villes[1].longitude)}}
+                </p>
+                <p>
+                    Isha :{{ishaTime(villes[1].latitude,villes[1].longitude)}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            <div class="col mx-auto">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Temps Priere</mat-card-title>
+                  <mat-card-subtitle>{{villes[2].name}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      Fajer :{{fajerTime(villes[2].latitude,villes[2].longitude)}}
+                  </p>
+                  <p>
+                    Dhohr :{{dhuhrTime(villes[2].latitude,villes[2].longitude)}}
+                </p>
+                <p>
+                    Asr :{{asrTime(villes[2].latitude,villes[2].longitude)}}
+                </p>
+                <p>
+                    Modhreb :{{maghribTime(villes[2].latitude,villes[2].longitude)}}
+                </p>
+                <p>
+                    Isha :{{ishaTime(villes[2].latitude,villes[2].longitude)}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col mx-auto">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Temps Priere</mat-card-title>
+                  <mat-card-subtitle>{{villes[3].name}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      Fajer :{{fajerTime(villes[3].latitude,villes[3].longitude)}}
+                  </p>
+                  <p>
+                    Dhohr :{{dhuhrTime(villes[3].latitude,villes[3].longitude)}}
+                </p>
+                <p>
+                    Asr :{{asrTime(villes[3].latitude,villes[3].longitude)}}
+                </p>
+                <p>
+                    Modhreb :{{maghribTime(villes[3].latitude,villes[3].longitude)}}
+                </p>
+                <p>
+                    Isha :{{ishaTime(villes[3].latitude,villes[3].longitude)}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            <div class="col mx-auto">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Temps Priere</mat-card-title>
+                  <mat-card-subtitle>{{villes[4].name}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      Fajer :{{fajerTime(villes[4].latitude,villes[4].longitude)}}
+                  </p>
+                  <p>
+                    Dhohr :{{dhuhrTime(villes[4].latitude,villes[4].longitude)}}
+                </p>
+                <p>
+                    Asr :{{asrTime(villes[4].latitude,villes[4].longitude)}}
+                </p>
+                <p>
+                    Modhreb :{{maghribTime(villes[4].latitude,villes[4].longitude)}}
+                </p>
+                <p>
+                    Isha :{{ishaTime(villes[4].latitude,villes[4].longitude)}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+            <div class="col">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Temps Priere</mat-card-title>
+                  <mat-card-subtitle>{{villes[5].name}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      Fajer :{{fajerTime(villes[5].latitude,villes[5].longitude)}}
+                  </p>
+                  <p>
+                    Dhohr :{{dhuhrTime(villes[5].latitude,villes[5].longitude)}}
+                </p>
+                <p>
+                    Asr :{{asrTime(villes[5].latitude,villes[5].longitude)}}
+                </p>
+                <p>
+                    Modhreb :{{maghribTime(villes[0].latitude,villes[0].longitude)}}
+                </p>
+                <p>
+                    Isha :{{ishaTime(villes[5].latitude,villes[5].longitude)}}
+                </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col">
+             <mat-card class="example-card">
+               <mat-card-header>
+                 <mat-card-title>Temps Priere</mat-card-title>
+                 <mat-card-subtitle>{{villes[6].name}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                 <p>
+                     Fajer :{{fajerTime(villes[0].latitude,villes[6].longitude)}}
+                 </p>
+                 <p>
+                   Dhohr :{{dhuhrTime(villes[6].latitude,villes[0].longitude)}}
+               </p>
+               <p>
+                   Asr :{{asrTime(villes[6].latitude,villes[6].longitude)}}
+               </p>
+               <p>
+                   Modhreb :{{maghribTime(villes[6].latitude,villes[6].longitude)}}
+               </p>
+               <p>
+                   Isha :{{ishaTime(villes[0].latitude,villes[6].longitude)}}
+               </p>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+               </mat-card-actions>
+             </mat-card>
+           </div>
+           <div class="col">
+             <mat-card class="example-card">
+               <mat-card-header>
+                 <mat-card-title>Temps Priere</mat-card-title>
+                 <mat-card-subtitle>{{villes[7].name}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                 <p>
+                     Fajer :{{fajerTime(villes[7].latitude,villes[7].longitude)}}
+                 </p>
+                 <p>
+                   Dhohr :{{dhuhrTime(villes[7].latitude,villes[7].longitude)}}
+               </p>
+               <p>
+                   Asr :{{asrTime(villes[7].latitude,villes[7].longitude)}}
+               </p>
+               <p>
+                   Modhreb :{{maghribTime(villes[7].latitude,villes[7].longitude)}}
+               </p>
+               <p>
+                   Isha :{{ishaTime(villes[7].latitude,villes[7].longitude)}}
+               </p>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+               </mat-card-actions>
+             </mat-card>
+           </div>
+           <div class="col">
+             <mat-card class="example-card">
+               <mat-card-header>
+                 <mat-card-title>Temps Priere</mat-card-title>
+                 <mat-card-subtitle>{{villes[8].name}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                 <p>
+                     Fajer :{{fajerTime(villes[8].latitude,villes[8].longitude)}}
+                 </p>
+                 <p>
+                   Dhohr :{{dhuhrTime(villes[8].latitude,villes[8].longitude)}}
+               </p>
+               <p>
+                   Asr :{{asrTime(villes[8].latitude,villes[8].longitude)}}
+               </p>
+               <p>
+                   Modhreb :{{maghribTime(villes[8].latitude,villes[8].longitude)}}
+               </p>
+               <p>
+                   Isha :{{ishaTime(villes[8].latitude,villes[8].longitude)}}
+               </p>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+               </mat-card-actions>
+             </mat-card>
+           </div>
+           </div>
+           <div class="row">
+           <div class="col">
+             <mat-card class="example-card">
+               <mat-card-header>
+                 <mat-card-title>Temps Priere</mat-card-title>
+                 <mat-card-subtitle>{{villes[9].name}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                 <p>
+                     Fajer :{{fajerTime(villes[9].latitude,villes[9].longitude)}}
+                 </p>
+                 <p>
+                   Dhohr :{{dhuhrTime(villes[9].latitude,villes[9].longitude)}}
+               </p>
+               <p>
+                   Asr :{{asrTime(villes[9].latitude,villes[9].longitude)}}
+               </p>
+               <p>
+                   Modhreb :{{maghribTime(villes[9].latitude,villes[9].longitude)}}
+               </p>
+               <p>
+                   Isha :{{ishaTime(villes[9].latitude,villes[9].longitude)}}
+               </p>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+               </mat-card-actions>
+             </mat-card>
+           </div>
+           <div class="col">
+             <mat-card class="example-card">
+               <mat-card-header>
+                 <mat-card-title>Temps Priere</mat-card-title>
+                 <mat-card-subtitle>{{villes[10].name}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                 <p>
+                     Fajer :{{fajerTime(villes[10].latitude,villes[10].longitude)}}
+                 </p>
+                 <p>
+                   Dhohr :{{dhuhrTime(villes[10].latitude,villes[10].longitude)}}
+               </p>
+               <p>
+                   Asr :{{asrTime(villes[10].latitude,villes[10].longitude)}}
+               </p>
+               <p>
+                   Modhreb :{{maghribTime(villes[10].latitude,villes[10].longitude)}}
+               </p>
+               <p>
+                   Isha :{{ishaTime(villes[10].latitude,villes[10].longitude)}}
+               </p>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+               </mat-card-actions>
+             </mat-card>
+           </div>
+           <div class="col">
+             <mat-card class="example-card">
+               <mat-card-header>
+                 <mat-card-title>Temps Priere</mat-card-title>
+                 <mat-card-subtitle>{{villes[11].name}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                 <p>
+                     Fajer :{{fajerTime(villes[11].latitude,villes[11].longitude)}}
+                 </p>
+                 <p>
+                   Dhohr :{{dhuhrTime(villes[11].latitude,villes[11].longitude)}}
+               </p>
+               <p>
+                   Asr :{{asrTime(villes[11].latitude,villes[11].longitude)}}
+               </p>
+               <p>
+                   Modhreb :{{maghribTime(villes[11].latitude,villes[11].longitude)}}
+               </p>
+               <p>
+                   Isha :{{ishaTime(villes[11].latitude,villes[11].longitude)}}
+               </p>
+               </mat-card-content>
+               <mat-card-actions>
+                 <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+               </mat-card-actions>
+             </mat-card>
+           </div>
+         </div>
+
+
+         <div class="row">
+          <div class="col">
+           <mat-card class="example-card">
+             <mat-card-header>
+               <mat-card-title>Temps Priere</mat-card-title>
+               <mat-card-subtitle>{{villes[12].name}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+               <p>
+                   Fajer :{{fajerTime(villes[12].latitude,villes[12].longitude)}}
+               </p>
+               <p>
+                 Dhohr :{{dhuhrTime(villes[12].latitude,villes[12].longitude)}}
+             </p>
+             <p>
+                 Asr :{{asrTime(villes[12].latitude,villes[12].longitude)}}
+             </p>
+             <p>
+                 Modhreb :{{maghribTime(villes[12].latitude,villes[12].longitude)}}
+             </p>
+             <p>
+                 Isha :{{ishaTime(villes[12].latitude,villes[12].longitude)}}
+             </p>
+             </mat-card-content>
+             <mat-card-actions>
+               <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+             </mat-card-actions>
+           </mat-card>
+         </div>
+         <div class="col">
+           <mat-card class="example-card">
+             <mat-card-header>
+               <mat-card-title>Temps Priere</mat-card-title>
+               <mat-card-subtitle>{{villes[13].name}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+               <p>
+                   Fajer :{{fajerTime(villes[13].latitude,villes[13].longitude)}}
+               </p>
+               <p>
+                 Dhohr :{{dhuhrTime(villes[13].latitude,villes[13].longitude)}}
+             </p>
+             <p>
+                 Asr :{{asrTime(villes[13].latitude,villes[13].longitude)}}
+             </p>
+             <p>
+                 Modhreb :{{maghribTime(villes[13].latitude,villes[13].longitude)}}
+             </p>
+             <p>
+                 Isha :{{ishaTime(villes[13].latitude,villes[13].longitude)}}
+             </p>
+             </mat-card-content>
+             <mat-card-actions>
+               <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+             </mat-card-actions>
+           </mat-card>
+         </div>
+         <div class="col">
+           <mat-card class="example-card">
+             <mat-card-header>
+               <mat-card-title>Temps Priere</mat-card-title>
+               <mat-card-subtitle>{{villes[14].name}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+               <p>
+                   Fajer :{{fajerTime(villes[14].latitude,villes[14].longitude)}}
+               </p>
+               <p>
+                 Dhohr :{{dhuhrTime(villes[14].latitude,villes[14].longitude)}}
+             </p>
+             <p>
+                 Asr :{{asrTime(villes[14].latitude,villes[14].longitude)}}
+             </p>
+             <p>
+                 Modhreb :{{maghribTime(villes[14].latitude,villes[14].longitude)}}
+             </p>
+             <p>
+                 Isha :{{ishaTime(villes[14].latitude,villes[14].longitude)}}
+             </p>
+             </mat-card-content>
+             <mat-card-actions>
+               <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+             </mat-card-actions>
+           </mat-card>
+         </div>
+         </div>
+         <div class="row">
+         <div class="col">
+           <mat-card class="example-card">
+             <mat-card-header>
+               <mat-card-title>Temps Priere</mat-card-title>
+               <mat-card-subtitle>{{villes[15].name}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+               <p>
+                   Fajer :{{fajerTime(villes[15].latitude,villes[15].longitude)}}
+               </p>
+               <p>
+                 Dhohr :{{dhuhrTime(villes[15].latitude,villes[15].longitude)}}
+             </p>
+             <p>
+                 Asr :{{asrTime(villes[15].latitude,villes[15].longitude)}}
+             </p>
+             <p>
+                 Modhreb :{{maghribTime(villes[15].latitude,villes[15].longitude)}}
+             </p>
+             <p>
+                 Isha :{{ishaTime(villes[15].latitude,villes[15].longitude)}}
+             </p>
+             </mat-card-content>
+             <mat-card-actions>
+               <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+             </mat-card-actions>
+           </mat-card>
+         </div>
+         <div class="col">
+           <mat-card class="example-card">
+             <mat-card-header>
+               <mat-card-title>Temps Priere</mat-card-title>
+               <mat-card-subtitle>{{villes[16].name}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+               <p>
+                   Fajer :{{fajerTime(villes[16].latitude,villes[16].longitude)}}
+               </p>
+               <p>
+                 Dhohr :{{dhuhrTime(villes[16].latitude,villes[16].longitude)}}
+             </p>
+             <p>
+                 Asr :{{asrTime(villes[16].latitude,villes[16].longitude)}}
+             </p>
+             <p>
+                 Modhreb :{{maghribTime(villes[16].latitude,villes[16].longitude)}}
+             </p>
+             <p>
+                 Isha :{{ishaTime(villes[16].latitude,villes[16].longitude)}}
+             </p>
+             </mat-card-content>
+             <mat-card-actions>
+               <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+             </mat-card-actions>
+           </mat-card>
+         </div>
+         <div class="col">
+           <mat-card class="example-card">
+             <mat-card-header>
+               <mat-card-title>Temps Priere</mat-card-title>
+               <mat-card-subtitle>{{villes[17].name}}</mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+               <p>
+                   Fajer :{{fajerTime(villes[17].latitude,villes[17].longitude)}}
+               </p>
+               <p>
+                 Dhohr :{{dhuhrTime(villes[17].latitude,villes[17].longitude)}}
+             </p>
+             <p>
+                 Asr :{{asrTime(villes[17].latitude,villes[17].longitude)}}
+             </p>
+             <p>
+                 Modhreb :{{maghribTime(villes[17].latitude,villes[17].longitude)}}
+             </p>
+             <p>
+                 Isha :{{ishaTime(villes[17].latitude,villes[17].longitude)}}
+             </p>
+             </mat-card-content>
+             <mat-card-actions>
+               <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+             </mat-card-actions>
+           </mat-card>
+         </div>
+       </div>
+
+
+
+       <div class="row">
+         <div class="col">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>{{villes[18].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fajerTime(villes[18].latitude,villes[18].longitude)}}
+              </p>
+              <p>
+                Dhohr :{{dhuhrTime(villes[18].latitude,villes[18].longitude)}}
+            </p>
+            <p>
+                Asr :{{asrTime(villes[18].latitude,villes[18].longitude)}}
+            </p>
+            <p>
+                Modhreb :{{maghribTime(villes[18].latitude,villes[18].longitude)}}
+            </p>
+            <p>
+                Isha :{{ishaTime(villes[18].latitude,villes[18].longitude)}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>{{villes[19].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fajerTime(villes[19].latitude,villes[19].longitude)}}
+              </p>
+              <p>
+                Dhohr :{{dhuhrTime(villes[19].latitude,villes[19].longitude)}}
+            </p>
+            <p>
+                Asr :{{asrTime(villes[19].latitude,villes[19].longitude)}}
+            </p>
+            <p>
+                Modhreb :{{maghribTime(villes[19].latitude,villes[19].longitude)}}
+            </p>
+            <p>
+                Isha :{{ishaTime(villes[19].latitude,villes[19].longitude)}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>{{villes[20].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fajerTime(villes[20].latitude,villes[20].longitude)}}
+              </p>
+              <p>
+                Dhohr :{{dhuhrTime(villes[20].latitude,villes[20].longitude)}}
+            </p>
+            <p>
+                Asr :{{asrTime(villes[20].latitude,villes[20].longitude)}}
+            </p>
+            <p>
+                Modhreb :{{maghribTime(villes[20].latitude,villes[20].longitude)}}
+            </p>
+            <p>
+                Isha :{{ishaTime(villes[20].latitude,villes[20].longitude)}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>{{villes[21].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fajerTime(villes[21].latitude,villes[21].longitude)}}
+              </p>
+              <p>
+                Dhohr :{{dhuhrTime(villes[21].latitude,villes[21].longitude)}}
+            </p>
+            <p>
+                Asr :{{asrTime(villes[21].latitude,villes[21].longitude)}}
+            </p>
+            <p>
+                Modhreb :{{maghribTime(villes[21].latitude,villes[21].longitude)}}
+            </p>
+            <p>
+                Isha :{{ishaTime(villes[21].latitude,villes[21].longitude)}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>{{villes[22].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fajerTime(villes[22].latitude,villes[22].longitude)}}
+              </p>
+              <p>
+                Dhohr :{{dhuhrTime(villes[22].latitude,villes[22].longitude)}}
+            </p>
+            <p>
+                Asr :{{asrTime(villes[22].latitude,villes[22].longitude)}}
+            </p>
+            <p>
+                Modhreb :{{maghribTime(villes[22].latitude,villes[22].longitude)}}
+            </p>
+            <p>
+                Isha :{{ishaTime(villes[22].latitude,villes[22].longitude)}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>{{villes[23].name}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fajerTime(villes[23].latitude,villes[23].longitude)}}
+              </p>
+              <p>
+                Dhohr :{{dhuhrTime(villes[23].latitude,villes[23].longitude)}}
+            </p>
+            <p>
+                Asr :{{asrTime(villes[23].latitude,villes[23].longitude)}}
+            </p>
+            <p>
+                Modhreb :{{maghribTime(villes[23].latitude,villes[23].longitude)}}
+            </p>
+            <p>
+                Isha :{{ishaTime(villes[23].latitude,villes[23].longitude)}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary" ><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+
+<!--
+
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Temps Priere</mat-card-title>
+              <mat-card-subtitle>Kasserine</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                  Fajer :{{fa1}}
+              </p>
+              <p>
+                Dhohr :{{dh1}}
+            </p>
+            <p>
+                Asr :{{asr1}}
+            </p>
+            <p>
+                Modhreb :{{mg1}}
+            </p>
+            <p>
+                Isha :{{sha1}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary"><a href="https://www.justcrok.agency/" target="_blank">H2no Nanodev</a></button>
+            </mat-card-actions>
+          </mat-card>
+
+
+
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="latitude">
+            <th mat-header-cell *matHeaderCellDef> Latitude </th>
+            <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="longitude">
+            <th mat-header-cell *matHeaderCellDef> Longitude </th>
+            <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+
+
+-->
+
+
+
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element of villes"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+</table>
+<app-footer></app-footer>

@@ -1,0 +1,92 @@
+<app-header></app-header>
+
+
+<body>
+  <div class="coran">
+    <div class="main-content">
+      <div class="coran__nav">
+        <div class="coran__progress">
+          <p>{{souraName?.nom}} {{souraName?.nom_phonetique}} {{souraName?.position}}</p>
+          <p class="coran__progress-value">32%</p>
+          <progress value="32" max="100"></progress>
+        </div>
+        <div class="coran__detail">
+          <div class="coran__chapter">
+            <p>{{souraName?.versets.juz}}</p>
+          </div>
+
+          <select>
+            <option value="Ayah" selected>Ayah</option>
+            <option *ngFor="let aya of soura">{{aya.position_ds_sourate}}</option>
+          </select>
+
+          <img src="../../assets/images/islamicjustcrok web_Artboard 12.svg" />
+        </div>
+      </div>
+      <!-- language nav -->
+
+      <div class="language">
+        <p>Language</p>
+        <div class="language__type">
+        <!--  <select class="language__type__select">
+            <option value="Phonétique">Phonétique</option>
+            <option value="Français" selected>Français</option>
+          </select>-->
+          <select class="language__type__select" [(ngModel)]="langue" [value]="langue">
+            <option value="Aucun" selected>Aucun</option>
+            <option value="Français">Français</option>
+          </select>
+        </div>
+      </div>
+      <!-- language nav -->
+    </div>
+    <div class="content-group">
+      <div class="coran__content">
+        <div class="coran__main-content">
+       <!--  <div class="verse-coran" *ngFor="let aya of soura"><b style="text-align: right;"> {{aya.text_arabe}} <i style="color: #01a789;">{{aya.position_ds_sourate}}</i></b> <b style="text-align: left;"><i>{{aya.text}}</i></b> </div>-->
+       <div class="verse-coran" *ngFor="let aya of soura">
+         <p style="text-align: right;"><b> {{aya.text_arabe}} <i style="color: #01a789; font-size: 1.7rem;">{{aya.position_ds_sourate}}</i></b></p>
+         <p *ngIf="langue=='Français'" style="text-align: left;"><b>{{aya.text}} <i style="color: #01a789; font-size: 1.7rem;">{{aya.position_ds_sourate}}</i></b></p>
+       </div>
+        </div>
+        <div class="coran__play-nav">
+          <div class="reciter-list">
+            <img src="../../assets/images/afasy.png" alt="" />
+            <select name="" id="">
+              <option value="">Mechari Alaffassi</option>
+            </select>
+          </div>
+
+          <div class="play-progress">
+            <p>{{souraName?.nom}}</p>
+           <!-- <progress value="32" max="100"></progress>
+            <p class="play-time">21:14</p>-->
+
+          </div>
+         <div class="play-buttons">
+           <!-- <img src="../../assets/images/play.svg" alt="" />
+            <img src="../../assets/images/pause1.svg" alt="" />
+            <img src="../../assets/images/sound.svg" alt="" />-->
+               <audio
+            controls
+            src="../../assets/audio/{{souraMP3C}}.mp3">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <div class="name_soura__all">
+        <div *ngFor="let soura of quran" >
+        <div class="name_soura">
+          <a (click)="getSoura(soura)" class="nameSoura"> {{soura.nom}} {{soura.nom_phonetique}}</a>
+          <p class="nameSoura">{{soura.position}}</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<app-footer></app-footer>
+

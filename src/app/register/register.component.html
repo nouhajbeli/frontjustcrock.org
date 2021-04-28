@@ -1,0 +1,114 @@
+<app-header></app-header>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+      <div class="row d-flex">
+          <div class="col-lg-6">
+              <div class="card1 pb-1">
+                  <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img
+                          src="../../assets/images/Samsung-Hand.png" class="image"> </div>
+              </div>
+
+          </div>
+          <div class="col-lg-6">
+              <div class="card2 card border-0 px-4 py-5">
+
+                  <form *ngIf="this.registerForm" [formGroup]="this.registerForm" (ngSubmit)="onSubmit()">
+
+                      <div class="row">
+
+                          <div class="form-group col-4">
+                              <label>Nom Complet</label>
+
+                              <input type="text" formControlName="fullName" class="form-control"
+                                 />
+
+                          </div>
+                          <div class="form-group col-4">
+                              <label>Email</label>
+                              <input type="text" formControlName="email" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                  <div *ngIf="f.email.errors">Veuillez entrer une adresse email valide</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-4">
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Veuillez entrer un mot de passe</div>
+                                <div *ngIf="f.password.errors.minlength">mot de passe doit être supérieur à 6
+                                    caractères
+                                </div>
+                            </div>
+                            </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>Adresse</label>
+                              <input type="text" formControlName="adresse" class="form-control"
+                                   />
+
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Ville</label>
+                              <input type="text" formControlName="ville" class="form-control"
+                                   />
+
+
+                          </div>
+
+
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>Pays</label>
+                              <input type="text" formControlName="pays" class="form-control"
+                                  />
+
+                          </div>
+                          <div class="form-group col-6">
+                            <label>Code Postale</label>
+                            <input type="text" formControlName="codePostal" class="form-control"
+                             />
+
+                        </div>
+
+
+                      </div>
+
+
+                      <div class="row">
+
+                          <div class="form-group col-8" >
+                            <label>Telephone</label>
+                             <international-phone-number formControlName="telephone" class="form-control" placeholder="Enter phone number" [maxlength]="20" [defaultCountry]="'tn'" [required]="true"   ></international-phone-number>
+
+
+                       </div>
+                       <div class="form-group col-4">
+                        <label>Role</label>
+                        <input type="text" formControlName="role" class="form-control"  />
+
+                    </div>
+
+                       </div>
+
+
+
+                      </div>
+                      <div class="row mb-3 mt-3 px-3 "> <button type="submit" class="btn btn-success text-center">Ajouter Utilisateur</button> </div>
+                        <div class="success" *ngIf="showSuccessMessage" style="color:red">Saved successfully</div>
+                      <div class='alert' *ngIf='serverErrorMessages' style="color:red">
+                        {{serverErrorMessages}}
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<app-footer></app-footer>

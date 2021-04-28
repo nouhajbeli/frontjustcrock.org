@@ -1,0 +1,99 @@
+<header>
+  <nav class="navbar">
+    <a routerLink="/">
+      <img class="logo" src="../../assets/images/logo.svg" alt="logo" />
+    </a>
+    <div class="menu">
+      <div class="left-menu">
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/" href=""
+          >Maps</a
+        >
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/" href=""
+          >Prières</a
+        >
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/recitations"
+          >Récitateur</a
+        >
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/quranecrit"
+          >Coran</a
+        >
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/touvermosquee"
+          >Mosquées</a
+        >
+        <a
+          (click)="oppmenu1()"
+          class="menu-link pro-link"
+          routerLink="/macquelive"
+          >Pro</a
+        >
+        <a
+          (click)="oppmenu1()"
+          class="menu-link finance-link"
+          routerLink="/macquelive"
+          >Finance</a
+        >
+        <a
+          (click)="oppmenu1()"
+          class="menu-link tv-link"
+          routerLink="/macquelive"
+          >TV</a
+        >
+        <!-- <a
+          (click)="oppmenu1()"
+          class="menu-link"
+          *ngIf="role === 'admin'"
+          routerLink="/add"
+          >Ajouter Mosquee</a
+        >
+        <a
+          (click)="oppmenu1()"
+          class="menu-link"
+          *ngIf="role === 'admin'"
+          routerLink="/listUsers"
+          >Tous Proprietaires</a
+        >
+        <a
+          (click)="oppmenu1()"
+          class="menu-link"
+          *ngIf="role === 'admin'"
+          routerLink="/register"
+          >Ajouter Proprietaire</a
+        >
+
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/login"
+          >Connexion</a
+        >
+        <a (click)="onLogout()" class="menu-link" routerLink="/login"
+          >Deconnexion</a
+        > -->
+      </div>
+      <div class="right-menu">
+        <!-- <a routerLink="/login" class="profile-btn" *ngIf="role === null"> -->
+        <a routerLink="/login" class="profile-btn">
+          <img src="../../../assets/images/icons_user_vide.svg" alt="" />
+          Connexion
+        </a>
+
+        <select class="langue-menu">
+          <option value="fr" default>Fr</option>
+          <option value="en">En</option>
+          <option value="ar">Ar</option>
+        </select>
+        <img
+          *ngIf="!showMenu"
+          (click)="oppmenu()"
+          class="mobile-menu-btn"
+          src="../../assets/images/menu.svg"
+          alt=""
+        />
+        <img
+          *ngIf="showMenu"
+          (click)="oppmenu1()"
+          class="mobile-menu-btn"
+          src="../../assets/images/close.svg"
+          alt=""
+        />
+      </div>
+    </div>
+  </nav>
+</header>

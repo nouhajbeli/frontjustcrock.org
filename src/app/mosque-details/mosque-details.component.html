@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={{this.mosquee.imageUrl}} alt="...">
+      <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12716.992274976386!2d10.024401984809414!3d37.170575227981224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2dcfffb93beb5%3A0xc342eaa20b2e22a2!2sEl%20Alia!5e0!3m2!1sfr!2stn!4v1616232656027!5m2!1sfr!2stn"
+      frameBorder="0"
+      allowFullScreen=""
+      aria-hidden="false"
+      tabIndex="0"
+    ></iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Nom de mosquee : {{this.mosquee.nomMosquee}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Email : {{this.mosquee.email}}</li>
+        <li class="list-group-item">Adresse : {{this.mosquee.adresse}}</li>
+        <li class="list-group-item">Nom de gestionnaire : {{this.mosquee.nomGestionnaire}}</li>
+        <li class="list-group-item">Imam Mosquée : {{this.mosquee.imamMosquee}}</li>
+        <li class="list-group-item">Association Mosquée : {{this.mosquee.associationMosquee}}</li>
+        <li class="list-group-item">Heure de l'ouverture : {{this.mosquee.openingHours}}</li>
+        <li class="list-group-item">Fermeture exceptionnelle : {{this.mosquee.fermetureExeptionnelle}}</li>
+        <li class="list-group-item">Ouverture du Mosquée : {{this.mosquee.ouvertureMosquee}}</li>
+        <li class="list-group-item">Lat : {{this.mosquee.lat}}</li>
+        <li class="list-group-item">Ing : {{this.mosquee.lng}}</li>
+        <li class="list-group-item">Salles priére mosquée : {{ this.mosquee.mosqueeSallePriere}}</li>
+        <li class="list-group-item">Salles priére femmes : {{ this.mosquee.sallePriereFemmes}}</li>
+        <li class="list-group-item">Telephone 1 : {{ this.mosquee.telephone}}</li>
+        <li class="list-group-item">Telephone 2 : {{ this.mosquee.telephone1}}</li>
+        <li class="list-group-item">Municipalité : {{ this.mosquee.municipality}}</li>
+        <!-- the last li is for style issue don't remove it -->
+        <li class="list-group-item"></li>
+     </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">facebook : {{this.mosquee.facebook}}</a>
+        <a href="#" class="card-link">Site Web : {{this.mosquee.facebook}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

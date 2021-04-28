@@ -1,0 +1,229 @@
+<app-header></app-header>
+
+<div class="addtmosque">
+  <img
+    src="https://i.pinimg.com/originals/be/ab/99/beab999d774e843c6ea39594ac217eb8.jpg"
+  />
+  <form class="form" [formGroup]="addMosqueForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Nom de Mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="nomMosquee"
+          placeholder="Taper..."
+          [ngClass]="{ 'is-invalid': submitted && f.nomMosquee.errors }" />
+        <div *ngIf="submitted && f.nomMosquee.errors" class="invalid-feedback">
+          <div *ngIf="f.nomMosquee.errors.required">Veuillez entrer votre nom du Mosquee</div>
+      </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Email :</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Taper..."
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+          required
+        />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Facebook :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="facebook"
+          placeholder="Taper..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Site Web :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="siteWeb"
+          placeholder="Taper..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Adresse :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="adresse"
+          placeholder="Entrer l'adresse..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Nom de gestionnaire :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="nomGestionnaire"
+          placeholder="Taper..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Imam Mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imamMosquee"
+          placeholder="Taper..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Association Mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="associationMosquee"
+          placeholder="Taper..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Heure de l'ouverture :</label>
+        <input
+          type="time"
+          class="form-control"
+          formControlName="openingHours"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Fermeture exceptionnelle :</label>
+        <input
+          type="time"
+          class="form-control"
+          formControlName="fermetureExeptionnelle"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Ouverture du Mosquée :</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="ouvertureMosquee"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Image du mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imageUrl"
+          accept="image/png, image/jpeg"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Lat :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lat"
+          placeholder="Taper..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Ing :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lng"
+          placeholder="Taper..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Salles priére mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="mosqueeSallePriere"
+          placeholder="Taper..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Salles priére femmes :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="sallePriereFemmes"
+          placeholder="Taper..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Telephone 1</label>
+        <international-phone-number
+          formControlName="telephone"
+          class="form-control"
+          placeholder="Enter phone number"
+          [maxlength]="20"
+          [defaultCountry]="'tn'"
+          [required]="true"
+        ></international-phone-number>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Telephone 2</label>
+        <international-phone-number
+          formControlName="telephone1"
+          class="form-control"
+          placeholder="Enter phone number"
+          [maxlength]="20"
+          [defaultCountry]="'tn'"
+          [required]="true"
+        ></international-phone-number>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Municipalité :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="municipality"
+          placeholder="Taper..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Choisir le Continent</label>
+        <select
+          name="code"
+          class="form-control"
+          formControlName="code"
+          required
+        >
+          <option value="af">Afrique</option>
+          <option value="eu">Europe</option>
+          <option value="as">Asia</option>
+          <option value="na">Amerique du Nord</option>
+          <option value="sa">Amerique du sud</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+      Ajouter
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,501 @@
+<app-header></app-header>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+  rel="stylesheet"  type='text/css'>
+<div class="reciters"  >
+
+  <h1>Top Récitateur</h1>
+  <!-- section 1 : les recitateurs listes -->
+  <div class="container my-4" style="margin-left:100px; margin-top:0">
+
+
+
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls-top" style="margin-left:500px;padding:20px">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left" style="margin:20px;color: gray;width:30px"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right" style="margin:20px;color: gray;width:30px"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+
+                  <div class="single-reciter">
+                    <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617198865/fares/téléchargement_pvbvhq.jpg">
+          <p>Fares Abbad</p>
+          <div class="reciter-infos">
+
+            <div class="reciter-origin">
+              <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262574/flag-of-yemen-725x490_ybtp1v.jpg" alt="" />
+              <p>Yémen</p>
+              </div>
+              <p>Riwayet Hafes</p>
+          </div>
+          <button (click)="afffares()">Ecoute</button>
+
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+
+                <div class="single-reciter">
+                  <img class="image" src="../assets/images/Juhani.jpg">
+                  <p>Abdullah Al-Juhani</p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+                      <p>Saudi Arabia</p>
+                    </div>
+
+                      <p>Riwayet Hafes</p>
+                  </div>
+                  <button (click)="affJuhani()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="../assets/images/Ghamidy.jpg">
+        <p>Saad El Ghamidi</p>
+        <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617261226/flag_rl5sas.png" alt="" />
+            <p>kuwait</p>
+          </div>
+
+            <p>Riwayet Hafes</p>
+        </div>
+        <button (click)="affGhamidy()">Ecoute</button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="./../assets/images/Mueaqly.png">
+        <p>Mahir Al Muaiqlyy</p>
+        <div class="reciter-infos">
+          <div class="reciter-origin">
+              <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617261226/flag_rl5sas.png" alt="" />
+              <p>kuwait</p>
+          </div>
+          <p>Riwayet Hafes</p>
+      </div>
+        <button (click)="affMaher()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1615884668/salah_boukhater_ungjqr.png">
+                  <p>Salah Boukhater</p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617261587/f8b6869db15876539a92e75896267789_gt65hn.png" alt="" />
+                      <p>Emirate</p>
+                  </div>
+                  <p>Riwayet Hafes</p>
+                 </div>
+<button (click)="affboukhater()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 ">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1615889748/QWxpIEFqYW1pQDN4LnBuZw_ikbe7o.png">
+                  <p>Ahmad Bin Ali Al-Ajmy</p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+                      <p>Saudi Arabia</p>
+                      </div>
+                      <p>Riwayet Hafes</p>
+                  </div>
+                  <button (click)="affAjmi()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.Second slide-->
+
+        <!--Third slide-->
+        <div class="carousel-item">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617200924/bandar/timthumb_wysel4.jpg">
+                  <p>Bandar Baleela </p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+                      <p>Saudi Arabia</p>
+                      </div>
+                      <p>Riwayet Hafes</p>
+                  </div>
+                  <button (click)="affBandar()">Ecoute</button>
+
+                </div>
+            </div>
+</div>
+            <div class="col-md-4 ">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617202589/basfar/unnamed_ol093x.png">
+                  <p>Abdullah Ibn Ali Basfar</p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+                      <p>Saudi Arabia</p>
+                      </div>
+                      <p>Riwayet Hafes</p>
+                  </div>
+                  <button (click)="affbasfar()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617204412/khalid al ghamidi/avatars-000048319979-a72zfq-t500x500_fypto0.jpg">
+        <p>Khalid Al Ghamdi  </p>
+        <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+            <p>Saudi Arabia</p>
+            </div>
+            <p>Riwayet Hafes</p>
+        </div>
+        <button (click)="affkhaled()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!--/.Third slide-->
+        <div class="carousel-item">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="../assets/images/Abdelbasset.png">
+        <p>Abdelbasset Abdessamad</p>
+        <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617261226/flag_rl5sas.png" alt="" />
+            <p>kuwait</p>
+          </div>
+
+            <p>Riwayet Hafes</p>
+        </div>
+        <button (click)="affSamad()">Ecoute</button>
+
+                </div>
+
+            </div>
+</div>
+            <div class="col-md-4 ">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617205367/abdelwadoud/unnamed_1_zl4rv2.png">
+                  <p>Abdul Wadud Haneef</p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+                      <p>Saudi Arabia</p>
+                      </div>
+                      <p>Riwayet Hafes</p>
+                  </div>
+                  <button (click)="affhanif()">Ecoute</button>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-2">
+                <div class="single-reciter">
+                  <img class="image" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617217836/houdaify/Huthaify_ozacfp.jpg">
+                  <p>Ali ibn Abdur-Rahman al Hudhaify  </p>
+                  <div class="reciter-infos">
+
+          <div class="reciter-origin">
+            <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1617262373/drapeau-de-l-arabie-saoudite-36091952_hysa0x.jpg" alt="" />
+                      <p>Saudi Arabia</p>
+                      </div>
+                      <p>Riwayet Hafes</p>
+                  </div>
+                  <button (click)="affhoudaifi()">Ecoute</button>
+
+                </div>              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+  </div>
+
+
+
+  <!-- section 1 : les recitateurs audio -->
+  <div *ngIf="aff" class="reciter-content">
+
+      <div class="reciter-playlist"  style=" overflow: scroll;height:400px">
+        <ngx-audio-player *ngIf="juhani"
+        [playlist]="juhaniPlaylist"
+        [displayTitle]="msaapDisplayTitle"
+        [autoPlay]="false"
+        [displayPlaylist]="msaapDisplayPlayList"
+        muted="muted"
+        [pageSizeOptions]="pageSizeOptions"
+        [displayVolumeControls]="msaapDisplayVolumeControls"
+        [displayRepeatControls]="msaapDisplayRepeatControls"
+        [disablePositionSlider]="msaapDisablePositionSlider"
+        [displayArtist]="msaapDisplayArtist"
+        [displayDuration]="msaapDisplayDuration"
+        [expanded]="true">
+      </ngx-audio-player>
+          <ngx-audio-player *ngIf="Ajmi"
+          [playlist]="AjmiPlaylist"
+          [displayTitle]="msaapDisplayTitle"
+          [autoPlay]="false"
+          muted="muted"
+          [displayPlaylist]="msaapDisplayPlayList"
+          [pageSizeOptions]="pageSizeOptions"
+          [displayVolumeControls]="msaapDisplayVolumeControls"
+          [displayRepeatControls]="msaapDisplayRepeatControls"
+          [disablePositionSlider]="msaapDisablePositionSlider"
+          [displayArtist]="msaapDisplayArtist"
+          [displayDuration]="msaapDisplayDuration"
+          [expanded]="true">
+        </ngx-audio-player>
+        <ngx-audio-player *ngIf="saad"
+        [playlist]="ghamidyPlaylist"
+        [displayTitle]="msaapDisplayTitle"
+        [autoPlay]="false"
+        muted="muted"
+        [displayPlaylist]="msaapDisplayPlayList"
+        [pageSizeOptions]="pageSizeOptions"
+        [displayVolumeControls]="msaapDisplayVolumeControls"
+        [displayRepeatControls]="msaapDisplayRepeatControls"
+        [disablePositionSlider]="msaapDisablePositionSlider"
+        [displayArtist]="msaapDisplayArtist"
+        [displayDuration]="msaapDisplayDuration"
+        [expanded]="true">
+      </ngx-audio-player>
+      <ngx-audio-player *ngIf="samad"
+      [playlist]="abdelbassetPlaylist"
+      [displayTitle]="msaapDisplayTitle"
+      [autoPlay]="false"
+      muted="muted"
+      [displayPlaylist]="msaapDisplayPlayList"
+      [pageSizeOptions]="pageSizeOptions"
+      [displayVolumeControls]="msaapDisplayVolumeControls"
+      [displayRepeatControls]="msaapDisplayRepeatControls"
+      [disablePositionSlider]="msaapDisablePositionSlider"
+      [displayArtist]="msaapDisplayArtist"
+      [displayDuration]="msaapDisplayDuration"
+      [expanded]="true">
+    </ngx-audio-player>
+    <ngx-audio-player *ngIf="boukhater"
+      [playlist]="boukhaterPlaylist"
+      [displayTitle]="msaapDisplayTitle"
+      [autoPlay]="false"
+      muted="muted"
+      [displayPlaylist]="msaapDisplayPlayList"
+      [pageSizeOptions]="pageSizeOptions"
+      [displayVolumeControls]="msaapDisplayVolumeControls"
+      [displayRepeatControls]="msaapDisplayRepeatControls"
+      [disablePositionSlider]="msaapDisablePositionSlider"
+      [displayArtist]="msaapDisplayArtist"
+      [displayDuration]="msaapDisplayDuration"
+      [expanded]="true">
+    </ngx-audio-player>
+    <ngx-audio-player *ngIf="fares"
+      [playlist]="FaresPlaylist"
+      [displayTitle]="msaapDisplayTitle"
+      [autoPlay]="false"
+      muted="muted"
+      [displayPlaylist]="msaapDisplayPlayList"
+      [pageSizeOptions]="pageSizeOptions"
+      [displayVolumeControls]="msaapDisplayVolumeControls"
+      [displayRepeatControls]="msaapDisplayRepeatControls"
+      [disablePositionSlider]="msaapDisablePositionSlider"
+      [displayArtist]="msaapDisplayArtist"
+      [displayDuration]="msaapDisplayDuration"
+      [expanded]="true">
+    </ngx-audio-player>
+    <ngx-audio-player *ngIf="bandar"
+      [playlist]="bandarPlaylist"
+      [displayTitle]="msaapDisplayTitle"
+      [autoPlay]="false"
+      muted="muted"
+      [displayPlaylist]="msaapDisplayPlayList"
+      [pageSizeOptions]="pageSizeOptions"
+      [displayVolumeControls]="msaapDisplayVolumeControls"
+      [displayRepeatControls]="msaapDisplayRepeatControls"
+      [disablePositionSlider]="msaapDisablePositionSlider"
+      [displayArtist]="msaapDisplayArtist"
+      [displayDuration]="msaapDisplayDuration"
+      [expanded]="true">
+    </ngx-audio-player>
+    <ngx-audio-player *ngIf="basfar"
+      [playlist]="basfarPlaylist"
+      [displayTitle]="msaapDisplayTitle"
+      [autoPlay]="false"
+      muted="muted"
+      [displayPlaylist]="msaapDisplayPlayList"
+      [pageSizeOptions]="pageSizeOptions"
+      [displayVolumeControls]="msaapDisplayVolumeControls"
+      [displayRepeatControls]="msaapDisplayRepeatControls"
+      [disablePositionSlider]="msaapDisablePositionSlider"
+      [displayArtist]="msaapDisplayArtist"
+      [displayDuration]="msaapDisplayDuration"
+      [expanded]="true">
+    </ngx-audio-player>
+    <ngx-audio-player *ngIf="khaled"
+    [playlist]="khaledPlaylist"
+    [displayTitle]="msaapDisplayTitle"
+    [autoPlay]="false"
+    muted="muted"
+    [displayPlaylist]="msaapDisplayPlayList"
+    [pageSizeOptions]="pageSizeOptions"
+    [displayVolumeControls]="msaapDisplayVolumeControls"
+    [displayRepeatControls]="msaapDisplayRepeatControls"
+    [disablePositionSlider]="msaapDisablePositionSlider"
+    [displayArtist]="msaapDisplayArtist"
+    [displayDuration]="msaapDisplayDuration"
+    [expanded]="true">
+  </ngx-audio-player>
+  <ngx-audio-player *ngIf="hanif"
+  [playlist]="hanifPlaylist"
+  [displayTitle]="msaapDisplayTitle"
+  [autoPlay]="false"
+  muted="muted"
+  [displayPlaylist]="msaapDisplayPlayList"
+  [pageSizeOptions]="pageSizeOptions"
+  [displayVolumeControls]="msaapDisplayVolumeControls"
+  [displayRepeatControls]="msaapDisplayRepeatControls"
+  [disablePositionSlider]="msaapDisablePositionSlider"
+  [displayArtist]="msaapDisplayArtist"
+  [displayDuration]="msaapDisplayDuration"
+  [expanded]="true">
+</ngx-audio-player>
+<ngx-audio-player *ngIf="houdaifi"
+[playlist]="houdaifiPlaylist"
+[displayTitle]="msaapDisplayTitle"
+[autoPlay]="false"
+muted="muted"
+[displayPlaylist]="msaapDisplayPlayList"
+[pageSizeOptions]="pageSizeOptions"
+[displayVolumeControls]="msaapDisplayVolumeControls"
+[displayRepeatControls]="msaapDisplayRepeatControls"
+[disablePositionSlider]="msaapDisablePositionSlider"
+[displayArtist]="msaapDisplayArtist"
+[displayDuration]="msaapDisplayDuration"
+[expanded]="true">
+</ngx-audio-player>
+<ngx-audio-player *ngIf="maher"
+  [playlist]="maherPlaylist"
+  [displayTitle]="msaapDisplayTitle"
+  [autoPlay]="false"
+  muted="muted"
+  [displayPlaylist]="msaapDisplayPlayList"
+  [pageSizeOptions]="pageSizeOptions"
+  [displayVolumeControls]="msaapDisplayVolumeControls"
+  [displayRepeatControls]="msaapDisplayRepeatControls"
+  [disablePositionSlider]="msaapDisablePositionSlider"
+  [displayArtist]="msaapDisplayArtist"
+  [displayDuration]="msaapDisplayDuration"
+  [expanded]="true">
+</ngx-audio-player>
+      </div>
+
+
+
+      <div class="reciter-description" style=" overflow: scroll;height:400px">
+          <h4 style="color: #01a67c;">À propos de Récitateur</h4>
+          <p>
+            {{recitateurInfo}}
+            {{recitateurInfoPlus}}
+          </p>
+      </div>
+  </div>
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+
+
+<app-footer></app-footer>

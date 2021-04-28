@@ -1,0 +1,82 @@
+.profile{
+  background-image: url('../../assets/images/body-background.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+.card-1{
+  margin: 5%;
+  padding: 2%;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(49, 47, 47);
+  border-radius: 1rem;
+}
+.card-1 .list-group-item{
+  background-color: rgb(49, 47, 47);
+    color:white;
+  border-color:darkslategrey;
+}
+img{
+  width: 10rem;
+  border-radius: 50%;
+}
+.card-2{
+  margin:5%;
+  width:90%;
+  border-radius: 1rem;
+  padding: 1%;
+  text-align: center;
+}
+.social-links{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:10px;
+}
+.tooltips{
+  margin:10%;
+  padding: 30%;
+  border-radius: 50%;
+}
+.social-media
+{
+  padding:5%;
+
+}
+.mosqueListe .list-group-item {
+  display:grid;
+  grid-template-columns:1% 98% 1%;
+}
+.card-header
+{
+ background-color:teal;
+ color:white;
+}
+.fa-pen{
+  color:teal
+}
+@media (min-width: 800px) {
+  .card-1{
+    padding: 2%;
+    width:80%;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(49, 47, 47);
+    border-radius: 1rem;
+  }
+  .profile{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 7%;
+    padding-right: 10%;
+
+  }
+  .card-2{
+    width:100%;
+    border-radius: 1rem;
+    padding: 1%;
+    text-align: center;
+  }
+
+}

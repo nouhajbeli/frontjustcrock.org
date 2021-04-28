@@ -1,0 +1,881 @@
+* {
+  /* margin: 0; */
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* carousel mosque --------------------------------------- */
+.header-section {
+  max-height: 100vh;
+}
+.carousel-inner > .item {
+  position: relative;
+}
+.first-slide {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  transform: translateX(30%);
+}
+.first-slide > h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.first-slide > p {
+  display: none;
+}
+.first-slide > button {
+  background-color: #ffffffa8;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 25px;
+}
+.third-slide {
+  color: black;
+  padding: 10px;
+  position: absolute;
+  background-color: #ffffff8f;
+  border-radius: 25px;
+}
+.third-slide > h3 {
+  color: black;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.third-slide > p {
+  display: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.third-slide > button {
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  color: white;
+  margin-top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #006f7b;
+}
+.third-slide > button:hover {
+  background-color: #005c66;
+}
+.second-slide > h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.second-slide > p {
+  display: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.second-slide > button {
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  color: black;
+  font-weight: 500;
+  margin-top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #ffffffa8;
+}
+.second-slide > button:hover,
+.first-slide > button:hover {
+  background-color: #fff;
+}
+/* search section --------------------------------------- */
+.search-section {
+  background-image: url(../../assets/images/search-pattern.jpg);
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 10%;
+}
+.search-section > p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.search-panel {
+  /* border: 2px solid red; */
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+.img-holder {
+  background-color: #ccc;
+  /* border: 2px solid blue; */
+  width: 20%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  cursor: pointer;
+}
+.img-holder > img {
+  height: 50px;
+}
+.search-panel > input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+  width: 80%;
+}
+/* pray time section ---------------------------------------- */
+
+.search-box {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-box > p {
+  text-align: center;
+  font-weight: 700;
+}
+
+.search-input {
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px 0 25px;
+  overflow: hidden;
+  padding-left: 5px;
+  align-items: center;
+}
+.search-input > img {
+  height: 35px;
+}
+.search-input > input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+}
+.search-box > p:first-child {
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+.search-box > p:nth-child(2) {
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.prayers-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.pray-time {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/images/prayer-time.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px 0;
+}
+
+.time-left {
+  font-size: 2.7rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.prayer {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.61);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  height: 150px;
+  min-width: 150px;
+  max-width: 200px;
+}
+.prayer > p:first-child {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+.prayer > p:nth-child(2) {
+  background-color: #01a67c;
+  border-radius: 10px;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+}
+/*  top mosques section ----------------------------------- */
+.top-mosques {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-mosques-title {
+  margin-bottom: 20px;
+}
+.top-mosques-title > h3 {
+  color: #01a67c;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 10px 10px 0;
+  text-align: center;
+}
+.text-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-highlight-left,
+.text-highlight-right {
+  display: inline-block;
+  height: 3px;
+  margin: 0 10px;
+}
+.text-highlight-w {
+  width: 120px;
+}
+.text-highlight-w2 {
+  width: 80px;
+}
+.bg-gray {
+  background-color: #ccc;
+}
+.bg-white {
+  background-color: white;
+}
+.text-highlight-right {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.text-highlight-left {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.text-highlight-circle {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+.carousel-cell {
+  padding: 20px;
+  z-index: 1;
+}
+.mosque-card {
+  border: 5px solid #ccc;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mosque-card-text {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mosque-card-text > p:first-child {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.mosque-card-text > p:nth-child(2) {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.mosque-card-text > button {
+  border: none;
+  background-color: #01a67c;
+  color: white;
+  padding: 10px 20px;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.mosque-card-text > button:hover {
+  background-color: #068162;
+}
+.img-container {
+  height: 200px;
+  overflow: hidden;
+}
+.mosque-card-img {
+  height: 200px !important;
+  object-fit: cover !important;
+  width: 100%;
+}
+
+/* details offres section --------------------------------- */
+
+.details {
+  background-image: url("../../assets/images/body-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.phone-img {
+  height: 350px;
+}
+.details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 0;
+}
+.details-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.details-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details-header > h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+.details-header > p {
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.7;
+  padding: 30px;
+}
+.two-cards {
+  width: 100%;
+}
+.detail-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+.card-text {
+  width: 150%;
+  padding: 10px 20px;
+}
+.card-text > p {
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.detail-card > img {
+  height: auto;
+  width: 60px;
+}
+.down-btn {
+  background-color: #01a67c;
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.down-btn:hover {
+  background-color: #068162;
+}
+/* commerce section-------------------------------- */
+.commerce-section {
+  background-color: #006f7b;
+  padding-bottom: 30px;
+}
+.top-commerce-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-commerce-title > h3 {
+  text-transform: uppercase;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 10px 10px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+.carousel-cell {
+  /* border: 2px solid red; */
+  padding: 20px;
+  z-index: 1;
+}
+.commerce-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.commerce-card-text {
+  padding: 40px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.commerce-card-text > p:first-child {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.commerce-card-text > p:nth-child(2) {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.commerce-card-text > button {
+  border: none;
+  background-color: #01a67c;
+  color: white;
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 25px;
+}
+.commerce-card-text > button:hover {
+  background-color: #068162;
+}
+.commerce-img-container {
+  flex: 1.2;
+  height: 400px;
+  overflow: hidden;
+  margin: 20px 20px 20px 0;
+}
+.commerce-card-img {
+  /* border: 2px solid blue; */
+  height: 400px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100%;
+}
+
+/* finance islamique section-------------------- */
+
+.finance-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid blue; */
+}
+
+.carousel-cell {
+  /* border: 2px solid red; */
+  padding: 20px;
+  z-index: 1;
+}
+.finance-card {
+  border: 5px solid #ccc;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.finance-card-text {
+  /* border: 2px solid purple; */
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.finance-card-text > p:first-child {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+.finance-card-text > p:nth-child(2) {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+}
+.finance-button {
+  align-self: flex-end;
+  border: none;
+  outline: none;
+  background-color: white;
+  display: flex;
+  /* width: fit-content; */
+}
+
+.finance-button > span {
+  color: rgba(44, 44, 44, 0.8);
+  margin-right: 5px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.finance-button > img {
+  height: 20px !important;
+  width: 30px !important;
+  /* S */
+}
+.finance-img-container {
+  height: 220px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.finance-card-img {
+  border-radius: 50% !important;
+  border: 2px solid #ccc;
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover !important;
+}
+@media (min-width: 480px) {
+  /* carousel _______________________*/
+  .first-slide {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .first-slide > h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .first-slide > p {
+    font-size: 0.9rem;
+    display: block;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .first-slide > button {
+    padding: 10px 20px;
+  }
+  .second-slide > h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+  .second-slide > p {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .second-slide > button {
+    padding: 10px 30px;
+  }
+
+  .third-slide > h3 {
+    color: black;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+  .third-slide > p {
+    text-align: center;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .third-slide > button {
+    padding: 10px 30px;
+  }
+  /* search section ---------------- */
+  .search-section {
+    padding: 60px 10%;
+  }
+  .search-section > p {
+    font-size: 1.5rem;
+  }
+  /* pray time section ---------------------------------------- */
+
+  .prayer {
+    height: 180px;
+  }
+  /* details offres section --------------------------------- */
+  .detail-card {
+    padding: 30px;
+  }
+  .card-text {
+    padding: 10px;
+    width: auto;
+    margin-left: 50px;
+  }
+  .detail-card > img {
+    /* height: auto; */
+    width: 80px;
+  }
+}
+
+@media (min-width: 660px) {
+  /* prayers-group styles----------------------------------------------------- */
+  .prayer {
+    width: 200px;
+    padding: 0 20px;
+  }
+}
+@media (min-width: 768px) {
+  /* carousel -------------- */
+  .first-slide > h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .first-slide > p {
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .first-slide > button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .second-slide {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+  .second-slide > h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .second-slide > p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .third-slide {
+    height: 200px;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+  .third-slide > h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .third-slide > p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .third-slide > button {
+    padding: 10px 30px;
+    margin-bottom: 20px;
+  }
+
+  /* details ---------------------- */
+  .details-content {
+    flex-direction: row-reverse;
+    padding: 30px 0;
+    justify-content: space-between;
+  }
+  .details-cards {
+    flex: 1.5;
+  }
+  .phone-img {
+    height: 350px;
+    align-self: center;
+    justify-self: center;
+    flex: 1;
+  }
+  .detail-card {
+    padding: 0;
+  }
+  .card-text {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 880px) {
+  .pray-time {
+    flex-direction: row;
+    padding: 20px 10px;
+  }
+  .search-box {
+    justify-content: center;
+    flex: 1;
+  }
+  .prayers-group {
+    flex: 3;
+  }
+  .prayer {
+    width: 160px;
+  }
+}
+@media (min-width: 1024px) {
+  /* carousel -------------- */
+  .first-slide > h3 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  .first-slide > p {
+    font-size: 1.4rem;
+    display: block;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 30px;
+  }
+  .first-slide > button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+  }
+  .second-slide {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+  .second-slide > h3 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  .second-slide > p {
+    font-size: 1.4rem;
+    text-align: center;
+    /* width: 300px; */
+    margin-bottom: 20px;
+  }
+  .second-slide > button {
+    padding: 15px 50px;
+    font-size: 1.1rem;
+  }
+  .third-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .third-slide > h3 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  .third-slide > p {
+    font-size: 1.4rem;
+    text-align: center;
+    /* width: 300px; */
+    margin-bottom: 20px;
+  }
+  .third-slide > button {
+    padding: 15px 50px;
+    font-size: 1.1rem;
+  }
+  /* pray time section ---------------------------------------- */
+  .pray-time {
+    padding: 40px 10px;
+  }
+  .prayer {
+    height: 200px;
+  }
+
+  /* details offres section --------------------------------- */
+  .details-content {
+    width: 100%;
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    max-width: 1500px;
+  }
+
+  .details-cards {
+    padding: 20px 30px;
+    width: 100%;
+  }
+  .two-cards {
+    display: flex;
+    margin: 20px 0;
+  }
+  .details-header > p {
+    padding: 30px 30px 0;
+  }
+
+  .phone-img {
+    height: 600px;
+    min-height: 600px;
+    min-width: auto;
+  }
+
+  .detail-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 300px;
+    margin: 20px 0;
+    padding: 0;
+  }
+  .card-text {
+    width: 150%;
+    padding: 10px 10px;
+    margin-left: 10px;
+  }
+  .card-text > p {
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .detail-card > img {
+    height: auto;
+    width: 80px;
+  }
+  .down-btn {
+    background-color: #01a67c;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+}

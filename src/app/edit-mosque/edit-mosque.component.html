@@ -1,0 +1,203 @@
+<!-- <h5>Modifier les informations du mosquée</h5> -->
+<app-header></app-header>
+
+<div class="editmosque">
+  <img
+    src="https://i.pinimg.com/originals/f9/8a/2a/f98a2a89553928743140771f46e8b212.jpg"
+  />
+  <form class="form" *ngIf="this.UpdateMosque" [formGroup]="UpdateMosque" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Nom de Mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="nomMosquee"
+          placeholder="Entrer le nouveau nom du mosquée..."
+        />
+      </div>
+      <div class="form-group col-6">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors">Veuillez entrer une adresse email valide</div>
+        </div>
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Facebook :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="facebook"
+          placeholder="..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Site Web :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="siteWeb"
+          placeholder="..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Adresse :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="adresse"
+          placeholder="Entrer la nouvelle adresse..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Nom de gestionnaire :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="nomGestionnaire"
+          placeholder="..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Imam Mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imamMosquee"
+          placeholder="Nouveau nom d'Imam..."
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Association Mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="associationMosquee"
+          placeholder="..."
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Heure de l'ouverture :</label>
+        <input
+          type="time"
+          class="form-control"
+          formControlName="openingHours"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Fermeture exceptionnelle :</label>
+        <input
+          type="time"
+          class="form-control"
+          formControlName="fermetureExeptionnelle"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Ouverture du Mosquée :</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="ouvertureMosquee"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Image du mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imageUrl"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Lat :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="..."
+          formControlName="lat"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Ing :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="..."
+          formControlName="lng"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Salles priére mosquée :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="..."
+          formControlName="mosqueeSallePriere"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Salles priére femmes :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="..."
+          formControlName="sallePriereFemmes"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Telephone 1</label>
+        <international-phone-number
+          formControlName="telephone"
+          class="form-control"
+          placeholder="Enter phone number"
+          [maxlength]="20"
+          [defaultCountry]="'tn'"
+        ></international-phone-number>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Telephone 2</label>
+        <international-phone-number
+          formControlName="telephone1"
+          class="form-control"
+          placeholder="Enter phone number"
+          [maxlength]="20"
+          [defaultCountry]="'tn'"
+        ></international-phone-number>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Municipalité :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="..."
+          formControlName="municipality"
+        />
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary" >
+      Enregistrer les modifications
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

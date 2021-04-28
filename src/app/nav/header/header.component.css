@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  max-width: 1500px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  z-index: 100000;
+  top: 0;
+  background-color: #fff;
+}
+.navbar {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  justify-content: space-between;
+}
+.logo {
+  /* border: 1px solid blue; */
+  height: 25px;
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.left-menu {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.918);
+  display: flex;
+  width: 100%;
+  top: 60px;
+  left: -100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.left-menu.active {
+  left: 0;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.menu-link {
+  font-weight: 600;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  transition: 0.5s;
+  color: #01a67c;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.menu-link:hover {
+  color: #01a67c;
+  background-color: #01a67c;
+}
+.pro-link {
+  color: #308d98;
+}
+.pro-link:hover {
+  color: white;
+  background-color: #308d98;
+}
+.finance-link {
+  color: #248963;
+}
+.finance-link:hover {
+  color: white;
+  background-color: #248963;
+}
+.tv-link {
+  color: #089a3b;
+}
+.tv-link:hover {
+  color: white;
+  background-color: #089a3b;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+}
+.langue-menu {
+  background: url("../../../assets/images/down-arrow.svg") right / 10px
+    no-repeat #fff;
+  background-position-x: 80%;
+
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-color: #006f7b;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 0 20px 0px 10px;
+  outline: none;
+  height: 25px;
+  width: 50px;
+}
+
+.langue-menu option {
+  border: none;
+}
+.profile-btn {
+  border: 2px solid orange;
+  margin: 10px;
+  font-size: 0.5rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  color: #006f7b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* display: none; */
+}
+.profile-btn > img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.profile-btn:hover {
+  cursor: pointer;
+}
+.mobile-menu-btn {
+  outline: none;
+  margin-left: 10px;
+  height: 25px;
+  width: 30px;
+  transition: all 0.5s ease;
+}
+@media (min-width: 480px) {
+  /* navbar styles ------------------------------------------*/
+  .navbar {
+    height: 60px;
+  }
+  .logo {
+    height: 35px;
+  }
+  .left-menu {
+    top: 60px;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    margin-left: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  /* navbar styles ------------------------------------------*/
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .left-menu {
+    box-shadow: none;
+    position: static;
+    background-color: white;
+    display: flex;
+    width: auto;
+    opacity: 1;
+    transition: all 0.5s ease;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .menu-link {
+    font-weight: 600;
+    display: inline-block;
+    width: auto;
+    margin: 0 10px;
+    padding: 10px 0;
+    text-align: center;
+    transition: 0.5s;
+    color: #01a67c;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+  }
+  .menu-link:hover {
+    background-color: #fff;
+    color: #01a67c;
+    border-bottom: 1px solid #01a67c;
+  }
+  .pro-link {
+    color: #308d98;
+  }
+  .pro-link:hover {
+    color: #308d98;
+    border-bottom: 1px solid #308d98;
+  }
+  .finance-link {
+    color: #248963;
+  }
+  .finance-link:hover {
+    color: #248963;
+    border-bottom: 1px solid #248963;
+  }
+  .tv-link {
+    color: #089a3b;
+  }
+  .tv-link:hover {
+    color: #089a3b;
+    border-bottom: 1px solid #089a3b;
+  }
+}

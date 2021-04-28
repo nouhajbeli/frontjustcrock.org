@@ -1,0 +1,149 @@
+<app-header></app-header>
+
+
+<body>
+  <div class="search-bar">
+  </div>
+  <div class="main-content">
+    <div class="map-section">
+
+      <div class="map"
+
+       leaflet
+       style="height: 100vh;"
+       [leafletOptions]= "options"
+       [leafletBaseLayers]= "baseLayers"
+       [leafletLayersControlOptions]="layersControlOptions"
+       [leafletMarkerCluster]= "markerClusterData"
+       [leafletMarkerClusterOptions]= "markerClusterOptions"
+       (leafletMarkerClusterReady)="markerClusterReady($event)">
+      </div>
+   <!--   <leaflet-locate-control
+         [map]="map"
+             [options]="locateOptions "
+             (location$)="onNewLocation($event)"
+    ></leaflet-locate-control>-->
+      <div class="search-input">
+        <img src="../assets/images/search.svg" alt="">
+        <input class="form-control"  type="text" name="adresse" [(ngModel)]="adresse" (ngModelChange)="Search()" placeholder="mosque place adresse" />
+      </div>
+      <div class="table-section">
+
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th (click)="sort('name')">Nom Mosquée&nbsp;<i class="fa fa-sort"></i></th>
+              <th (click)="sort('adresse')">Adresse&nbsp;<i class="fa fa-sort"></i></th>
+              <th>Informations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let mos of mosquees | orderBy: key: reverse | paginate: {itemsPerPage:10,currentPage:p};">
+              <td><button mat-button color="primary" (click)="getMosqueById(mos.id)">{{mos.nomMosquee}}</button></td>
+              <td>{{mos.adresse}}</td>
+              <td style="width: 20%;">
+                <button mat-icon-button color="#01a67c">
+                  <mat-icon> <a href="https://www.google.tn/maps/dir//{{mos.lat}},{{mos.lng}}" target="_blank">directions_car</a></mat-icon>
+                </button>
+                <a mat-icon-button color="#01a67c" [routerLink]="['/fullscreenmosque', mos.id]" target="_blank">
+                  <mat-icon>aspect_ratio</mat-icon>
+                </a>
+                <a mat-icon-button color="#01a67c" [routerLink]="['/infomosque', mos.id]" target="_blank">
+                  <mat-icon>info</mat-icon>
+                </a>
+
+
+              </td>
+
+            </tr>
+          </tbody>
+           <pagination-controls (pageChange)= "p = $event"></pagination-controls>
+         </table>
+
+      </div>
+    </div>
+
+    <div class="info">
+
+      <div class="info-block-one">
+        <img class="imageMosque" *ngIf="mosque.imageUrl" src={{mosque?.imageUrl}} alt="">
+        <img class="imageMosque" *ngIf="!mosque.imageUrl" src="../../assets/images/icons_mosque_vide.svg" alt="">
+
+        <p><span class="high-text">Nom De Mosquée: </span>{{mosque?.nomMosquee}}</p>
+       <!-- <div class="info-block">
+          <img src="../assets/images/imam-map-icon.svg" alt="">
+          <p>Nom Du L'imam: AAAAAA</p>
+        </div>-->
+        <div class="info-block">
+          <img src="../assets/images/address-icon.svg" alt="">
+          <p>Adresse Compléte: {{mosque?.adresse}} {{mosque?.municipality}}</p>
+        </div>
+        <div class="info-block">
+          <img src="../assets/images/open-time.svg" alt="">
+          <p>Horaires d'ouvertures: {{mosque?.openingHours}}</p>
+        </div>
+        <div class="info-block">
+          <img src="../assets/images/world.svg" alt="">
+          <p>Site Web: {{mosque?.siteWeb}}</p>
+
+        </div>
+        <div class="info-block">
+          <img src="../assets/images/phone-map-icon.svg" alt="">
+          <p>Téléphone: {{mosque?.telephone}}</p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="info-block-two">
+
+
+        <div class="pray-times">
+          <div class="single-prayer">
+            <p>Fajer</p>
+            <p>{{fa}}</p>
+          </div>
+          <div class="single-prayer">
+            <p>Lever du soleil</p>
+            <p>{{sun}}</p>
+          </div>
+          <div class="single-prayer">
+            <p>Doher</p>
+            <p>{{dh}}</p>
+          </div>
+          <div class="single-prayer">
+            <p>Aser</p>
+            <p>{{asr}}</p>
+          </div>
+          <div class="single-prayer">
+            <p>Maghrib</p>
+            <p>{{mg}}</p>
+          </div>
+          <div class="single-prayer">
+            <p>Isha</p>
+            <p>{{sha}}</p>
+          </div>
+        </div>
+        <div class="premium-button">
+
+          <a href="">Go Premium</a>
+          <p>notre service premium vous permet d'accéder à des services exclusifs pour votre mosquée</p>
+        </div>
+        <a class="map-links" *ngIf="(mosque | json) != '{}'" (click)="revendiquer(mosque.id)"><span>Revendiqué La Mosqué</span><span class="arrow-sign">></span></a>
+        <a class="map-links" routerLink="/conditionsgenerales"><span>Condition Générale d'Utilisation</span><span class="arrow-sign">></span></a>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</body>
+<app-footer
+></app-footer>

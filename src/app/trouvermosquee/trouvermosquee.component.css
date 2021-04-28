@@ -1,0 +1,201 @@
+/*.cnd {
+  background-image: url('../../assets/images/body-background.jpg');
+  background-repeat: repeat;
+  }
+
+  .country {
+    background-image: url('../../assets/images/body-background.jpg');
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20%;
+  }
+  .country > h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .country > img {
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 30px;
+  }
+  .main-content {
+    /* width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+  .country-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .europe-countries,
+  .kingdom-countries,
+  .africa-countries {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+  .europe-countries > h5,
+  .kingdom-countries > h5,
+  .africa-countries > h5 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+  .country-info {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    width: 155px;
+  }
+  .country-info > img {
+    margin-right: 10px;
+    width: 28px;
+  }
+  .country-info > a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .country-info > a:hover {
+    color: #01a67c;
+  }
+
+  @media (min-width: 410px) {
+    .country-list {
+      flex-direction: row;
+    }
+
+    .main-content {
+      flex-direction: row;
+    }
+  }
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 1024px) {
+    .europe-countries,
+    .kingdom-countries,
+    .africa-countries {
+      padding: 0 30px;
+    }
+  }
+*/
+body {
+  min-height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.country {
+  background-image: url('../../assets/images/body-background.jpg');
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.country > h1 {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #01a67c;
+  text-align: center;
+}
+.country > img {
+  width: 100%;
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+.main-content {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+.country-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.europe-countries,
+.kingdom-countries,
+.africa-countries {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.europe-countries > h5,
+.kingdom-countries > h5,
+.africa-countries > h5 {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 10px;
+}
+.country-info {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 130px;
+  /* border: 1px solid red; */
+}
+.great-britain {
+  width: 220px;
+}
+.country-info > img {
+  margin-right: 10px;
+  width: 28px;
+}
+.country-info > a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+.country-info > a:hover {
+  color: #01a67c;
+}
+
+@media (min-width: 410px) {
+  /*  .list-afrique {
+   flex-direction: row; * justify-content: space-evenly;
+  } */
+  .country-list {
+    flex-direction: row;
+  }
+
+  .main-content {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+ /*  .list-afrique {
+  }
+  .country-afrique {
+    width: auto;
+  } */
+  .europe-countries,
+  .kingdom-countries,
+  .africa-countries {
+    padding: 0 30px;
+  }
+}

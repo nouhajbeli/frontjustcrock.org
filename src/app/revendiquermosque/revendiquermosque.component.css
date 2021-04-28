@@ -1,0 +1,19 @@
+
+.cont
+{
+
+    background-image: url('../../assets/images/body-background.jpg');
+    background-repeat: repeat;
+    margin-bottom: 10%;
+    text-align: center;
+
+}
+
+.rev{
+  margin: auto;
+  width: 80%;
+}
+
+button{
+  background-color: #01a67c;
+}
