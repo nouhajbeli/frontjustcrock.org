@@ -8,6 +8,7 @@
 .card-1{
   margin: 5%;
   padding: 2%;
+  margin-left:5%;
   align-items: center;
   text-align: center;
   background-color: rgb(49, 47, 47);
@@ -44,6 +45,9 @@ img{
   padding:5%;
 
 }
+.editprofil{
+  text-align: right;
+}
 .mosqueListe .list-group-item {
   display:grid;
   grid-template-columns:1% 98% 1%;
@@ -55,6 +59,17 @@ img{
 }
 .fa-pen{
   color:teal
+}
+.code{
+  margin:0 2%; background-color: rgb(47, 167, 111); padding: 3%; color: black; border-radius: 0.5rem;  white-space: nowrap;
+
+}
+.code:hover{
+  background-color: aquamarine;
+  cursor: pointer;
+}
+.m-l-15{
+  color:gray
 }
 @media (min-width: 800px) {
   .card-1{

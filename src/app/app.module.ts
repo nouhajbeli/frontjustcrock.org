@@ -60,6 +60,7 @@ import { IvyCarouselModule} from 'angular-responsive-carousel';
 import { ToastrModule } from 'ngx-toastr';
 import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     EditMosqueComponent,
     MosqueDetailsComponent,
     DetailsProfilComponent,
-    AddPropMosqueComponent
+    AddPropMosqueComponent,
+    EditProfileComponent
 
   ],
   imports: [

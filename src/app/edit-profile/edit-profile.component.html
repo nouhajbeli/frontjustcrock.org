@@ -1,0 +1,126 @@
+<form class="form"   [formGroup]=" modifierProfile" (ngSubmit)="enregistrerModification()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Nom Complet :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="fullName"
+        placeholder="Taper..."
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>NomAssociation : :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="nomAssociation"
+        placeholder="Taper..."
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Telephone :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="telephone"
+        placeholder="..."
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Email : :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email"
+        placeholder="Taper..."
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Adresse :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="adresse"
+        placeholder="..."
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Pays :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="pays"
+        placeholder="Taper..."
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>ville :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="ville"
+        placeholder="..."
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>code postale:</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="codePostal"
+        placeholder="Taper..."
+      />
+    </div>
+  </div>
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label>site Internet :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="siteInternet"
+        placeholder="Taper..."
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Telephone fixe :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="telephoneFixe"
+        placeholder="Taper..."
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>imageUrl:</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="imageUrl"
+        placeholder="..."
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Role :</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="role"
+        placeholder="..."
+      />
+    </div>
+  </div>
+<button type="submit" class="btn btn-primary" >
+    Modifier
+  </button>
+</form>

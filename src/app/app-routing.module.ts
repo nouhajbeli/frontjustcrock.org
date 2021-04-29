@@ -30,6 +30,7 @@ import {MosqueDetailsComponent} from './mosque-details/mosque-details.component'
 import { DetailsProfilComponent } from './details-profil/details-profil.component';
 import { ListMosqueeComponent } from './list-mosquee/list-mosquee.component';
 import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.component';
+import {EditProfileComponent} from './edit-profile/edit-profile.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -73,6 +74,8 @@ const routes: Routes = [
     path: 'listUsers',
     component: ListUsersComponent,
   },
+  { path: 'edit/:id', component: EditProfileComponent },
+
 
   {
     path: 'add/:code',
