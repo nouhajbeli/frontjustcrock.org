@@ -97,7 +97,12 @@ export class ApiserviceService {
    editService(body:any){
     return this.http.put(this.BASE_URL+"/mosque/proprietaireAdd",body)
      }
+
    revendiquer(formData){
     return this.http.post("http://localhost:3000/api/contact/sendEmail",formData);
   }
+  getMosqueByIdOwner(id:string,code:any){
+    return this.http.get(this.BASE_URL+"/mosque/getMosqueUser"+"/"+code+"/"+id)
+   }
 }
+

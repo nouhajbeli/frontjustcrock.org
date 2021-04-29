@@ -161,7 +161,7 @@
       <h3 style="position: absolute; left: 65%">Status</h3>
       <h3 style="position: absolute; left: 85%">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let user of result || proprietaires">
+    <div class="row-element" *ngFor="let user of  proprietaires | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getProfileP(user.id)" class="clickable">
         {{ user.username }}
       </h3>
@@ -220,6 +220,7 @@
        height: 40px;
      "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
 
     <!-- Students -->
   </div>
@@ -234,7 +235,7 @@
       <h3 style="position: absolute; left: 65%">Status</h3>
       <h3 style="position: absolute; left: 85%">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let user of result||  users">
+    <div class="row-element" *ngFor="let user of  users | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getProfile(user.id)" class="clickable">
         {{ user.fullName }}
       </h3>
@@ -293,6 +294,8 @@
        height: 40px;
      "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
   <i   style="
   position: absolute;
@@ -313,7 +316,7 @@
       <h3 style="position: absolute; left: 65%">Status</h3>
       <h3 style="position: absolute; left: 85%">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let user of result|| webmasters">
+    <div class="row-element" *ngFor="let user of  webmasters  | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getProfile(user.id)" class="clickable">
         {{ user.fullName }}
       </h3>
@@ -372,6 +375,8 @@
        height: 40px;
      "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
   <!-- courses -->
   <i   style="
@@ -393,7 +398,7 @@
       <h3 style="position: absolute; left: 65%;width:200px">Adresse</h3>
       <h3 style="position: absolute; left: 85%; width:100px">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let mosquee of result || mosqueesAf">
+    <div class="row-element" *ngFor="let mosquee of mosqueesAf | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getMosqueeAf(mosquee.id)" class="clickable" style="width:300px">
         {{ mosquee.nomMosquee }}
       </h3>
@@ -420,6 +425,8 @@
       <i class="fa fa-pencil-square-o"   (click)="editMosqueeAf(mosquee.id)"
       style=" position: absolute;  left: 90%; margin-top: 0.7%; border: 0px;color:  rgb(100, 212, 100); width: 70px;height: 40px"></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
   <i   style="
   position: absolute;
@@ -440,7 +447,7 @@
       <h3 style="position: absolute; left: 65% ; width:200px">Adresse</h3>
       <h3 style="position: absolute; left: 85% ; width:100px">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let mosquee of result || mosqueesEu">
+    <div class="row-element" *ngFor="let mosquee of mosqueesEu | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getMosqueeEu(mosquee.id)" class="clickable" style="width:300px">
         {{ mosquee.nomMosquee }}
       </h3>
@@ -481,6 +488,8 @@
         height: 40px;
       "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
   <i   style="
   position: absolute;
@@ -501,7 +510,7 @@
       <h3 style="position: absolute; left: 65% ;width:200px">Adresse</h3>
       <h3 style="position: absolute; left: 85% ;width:100px">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let mosquee of result || mosqueesAs">
+    <div class="row-element" *ngFor="let mosquee of mosqueesAs | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getMosqueeAs(mosquee.id)" class="clickable" style="width:300px">
         {{ mosquee.nomMosquee }}
       </h3>
@@ -542,6 +551,8 @@
       height: 40px;
     "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
   <i   style="
   position: absolute;
@@ -562,7 +573,7 @@
       <h3 style="position: absolute; left: 65%;width:200px">Adresse</h3>
       <h3 style="position: absolute; left: 85%;width:100px">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let mosquee of result || mosqueesAmN">
+    <div class="row-element" *ngFor="let mosquee of mosqueesAmN | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getMosqueeAmN(mosquee.id)" class="clickable" style="width:300px">
         {{ mosquee.nomMosquee }}
       </h3>
@@ -603,6 +614,8 @@
         height: 40px;
       "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
   <!-- chart -->
   <i   style="
@@ -624,7 +637,7 @@
       <h3 style="position: absolute; left: 65%;width:200px">Adresse</h3>
       <h3 style="position: absolute; left: 85%;width:100px">Action</h3>
     </div>
-    <div class="row-element" *ngFor="let mosquee of result || mosqueesAmS">
+    <div class="row-element" *ngFor="let mosquee of mosqueesAmS | paginate:{itemsPerPage:5,currentPage: p}">
       <h3 (click)="getMosqueeAmS(mosquee.id)" class="clickable" style="width:300px">
         {{ mosquee.nomMosquee }}
       </h3>
@@ -665,5 +678,7 @@
         height: 40px;
       "></i>
     </div>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+
   </div>
 </div>
