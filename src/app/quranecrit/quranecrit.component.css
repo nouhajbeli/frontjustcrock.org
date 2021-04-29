@@ -1,30 +1,4 @@
-/*@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
-font-family: 'Droid Arabic Naskh', serif;*/
-
 @import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
-  /* font-family: 'Amiri', serif; */
-/*div, mat-hint{
-  text-align: center;
-
-}
-
-mat-form-field {
-  text-align: center;
-  height: 100%;
-  width: 100%;
-}
-
-
-.detailsC {
-  background-image: url('../../assets/images/body-background.jpg');
-  background-repeat: repeat;
-  margin-bottom: 50%;
-}
-.cnt{
-  width: 80%;
-  position: relative;
-  margin: auto;
-}*/
 
 * {
   margin: 0;
