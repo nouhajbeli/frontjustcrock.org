@@ -56,9 +56,11 @@ import { EditMosqueComponent } from './edit-mosque/edit-mosque.component';
 import { MosqueDetailsComponent } from './mosque-details/mosque-details.component';
 import { DetailsProfilComponent } from './details-profil/details-profil.component';
 import { FileUploadModule } from "ng2-file-upload";
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { IvyCarouselModule} from 'angular-responsive-carousel';
 import { ToastrModule } from 'ngx-toastr';
 import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +96,8 @@ import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.compon
     EditMosqueComponent,
     MosqueDetailsComponent,
     DetailsProfilComponent,
-    AddPropMosqueComponent
+    AddPropMosqueComponent,
+    EditProfileComponent
 
   ],
   imports: [
@@ -121,7 +124,8 @@ import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.compon
     FilterPipeModule,
     FormsModule,
     CommonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AutocompleteLibModule
 
 
   ],

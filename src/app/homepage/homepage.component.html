@@ -85,12 +85,38 @@
 <section class="pray-time">
   <div class="search-box">
     <p>Horaire de la prière en fonction de votre ville :</p>
-    <div class="search-input">
+   <!-- <div class="search-input">
       <img src="../../assets/images/search.svg" alt="" />
       <input type="search" placeholder="ville..." />
+    </div>-->
+    <div class="search-input">
+      <img src="../../assets/images/search.svg" alt="" />
+      <div>
+        <ng-autocomplete
+        [data]="villes"
+        [searchKeyword]="keyword"
+        placeholder="Ville..."
+        (selected)='selectEvent($event)'
+        (inputChanged)='onChangeSearch($event)'
+        (inputFocused)='onFocused($event)'
+        historyIdentifier="villes"
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">
+      </ng-autocomplete>
+
+      <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.name"></a>
+      </ng-template>
+
+      <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+      </ng-template>
+      </div>
+
     </div>
     <p>Temps restant avant la prochaine prière</p>
-    <p class="time-left">00:10:32</p>
+    <!--<p class="time-left">00:10:32</p>-->
+    <p>{{todayDate | date}}</p>
   </div>
   <div class="prayers-group">
     <div class="prayer first-pray">
@@ -209,9 +235,9 @@
   <div class="details-header">
     <h2>Découvrez notre application mobile SALAT</h2>
     <p>
-      L'application jsutcrok vous aide à trouver la mosquée la plus proche, à
+      L'application justcrok vous aide à trouver la mosquée la plus proche, à
       lire / écouter le Coran, à vérifier l'heure de la prière chez vous, à
-      trouver une mosquée ou à regarder la Mecque en direc...
+      trouver une mosquée ou à regarder la Mecque en direct...
     </p>
   </div>
   <div class="details-content">

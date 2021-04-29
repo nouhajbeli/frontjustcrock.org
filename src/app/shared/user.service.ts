@@ -94,8 +94,8 @@ getAllService(){
      return this.http.get(this.BASE_URL+"/user/userProfileId/"+id,this.noAuthHeader)
    }
    editServiceUser(body:any){
-     return this.http.put(this.BASE_URL+"/user/editUserByAdmin/",body,this.noAuthHeader)
-   }
+    return this.http.put(this.BASE_URL+"/user/editUser/",body)
+  }
    editServiceProp(body:any){
     return this.http.put(this.BASE_URL+"/user/editProprietaire/",body,this.noAuthHeader)
 
