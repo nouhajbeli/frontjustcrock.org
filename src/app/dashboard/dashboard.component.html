@@ -28,7 +28,8 @@
 </header>
 <div class="l-sidebar" [ngClass]="isExpanded ? 'test' : ''" >
   <div class="logo">
-    <div class="logo__txt">
+    <div          routerLink="/home"
+    class="logo__txt">
       <img style="width:80px" src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1618400646/justcrokorg-07_yj6cwi.png" />
     </div>
   </div>
@@ -148,6 +149,7 @@
       : 'sidebar-is-reduced content-reduced'
   "
 >
+
   <div *ngIf="display === 'proprietaires'">
     <h1>Proprietaires</h1>
 
@@ -165,7 +167,7 @@
       </h3>
       <h3 style="position: absolute; left: 30%">{{ user.email }}</h3>
       <h3 style="position: absolute; left: 65%">{{ user.status }}</h3>
-      <i class="fa fa-user" aria-hidden="true"
+      <i    class="fa fa-user" aria-hidden="true"
       *ngIf="user.status === 'blocked'"
       title="activer"
 
@@ -192,7 +194,7 @@
           width: 70px;
           height: 40px;
         "class="fa fa-ban" alt="bloquer"> </i>
-         <i       title="supprimer"
+         <i      *ngIf="role == 'admin' "  title="supprimer"
          class="fa fa-trash"
          (click)="deleteProp(user.id)" alt="supprimer"
          style="
@@ -206,7 +208,7 @@
          "
        >
      </i>
-     <i       title="modifier"
+     <i      *ngIf="role == 'admin' "  title="modifier"
      class="fa fa-pencil-square-o" aria-hidden="true"  (click)="editProprietaire(user.id)"
      style="
        position: absolute;
@@ -265,7 +267,7 @@
           width: 70px;
           height: 40px;
         "class="fa fa-ban" alt="bloquer"> </i>
-         <i        title="supprimer"
+         <i     *ngIf="role == 'admin' "    title="supprimer"
          class="fa fa-trash"
          (click)="deleteuser(user.id)" alt="supprimer"
          style="
@@ -279,7 +281,7 @@
          "
        >
      </i>
-     <i       title="modifier"
+     <i     *ngIf="role == 'admin' "   title="modifier"
       class="fa fa-pencil-square-o" aria-hidden="true"  (click)="edituser(user.id)"
      style="
        position: absolute;
@@ -300,7 +302,7 @@
   color: rgb(100, 212, 100);
   width: 270px;
   height: 240px;
-"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'webmaster'" (click)="ajoutUser()"> Ajouter Web Master</i>
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'webmaster' &&  role == 'admin' " (click)="ajoutUser()"> Ajouter Web Master</i>
   <div *ngIf="display === 'webmaster'" >
     <h1>Web Masters</h1>
 
@@ -344,7 +346,7 @@
           width: 70px;
           height: 40px;
         "class="fa fa-ban" alt="bloquer"> </i>
-         <i       title="supprimer"
+         <i      *ngIf="role == 'admin' "  title="supprimer"
          class="fa fa-trash"
          (click)="deleteWebmaster(user.id)" alt="supprimer"
          style="
@@ -358,7 +360,7 @@
          "
        >
      </i>
-     <i       title="modifier"
+     <i     *ngIf="role == 'admin' "   title="modifier"
      class="fa fa-pencil-square-o" aria-hidden="true"  (click)="edituser(user.id)"
      style="
        position: absolute;
@@ -372,6 +374,16 @@
     </div>
   </div>
   <!-- courses -->
+  <i   style="
+  position: absolute;
+  left: 88%;
+  margin-top: 0.05%;
+  border: 0px;
+  color: rgb(100, 212, 100);
+  width: 270px;
+  height: 240px;
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'Afrique'" (click)="ajoutMosquee('af')"> Ajouter Mosquee</i>
+
   <div *ngIf="display === 'Afrique'" >
     <h1>Afrique</h1>
     <div style="border: 1px solid gray; margin: 2%"></div>
@@ -390,9 +402,17 @@
       </h3>
       <h3 style="position: absolute; left: 65%;width:200px">{{ mosquee.street }}</h3>
 
+      <i   style="
+      position: absolute;
+      left: 86%;
+      margin-top: 0.7%;
+      border: 0px;
+      color: rgb(100, 212, 100);
+      width: 270px;
+      height: 240px;
+    "class="fa fa-plus" title="ajouter Prop"  (click)="ajoutPAf(mosquee.id)"></i>
 
-
-      <i  class="fa fa-trash" (click)="deleteMosqueeAf(mosquee.id)" style=" position: absolute;  left: 87%; margin-top: 0.7%; border: 0px;  color: red;
+      <i  class="fa fa-trash" (click)="deleteMosqueeAf(mosquee.id)" style=" position: absolute;  left: 88%; margin-top: 0.7%; border: 0px;  color: red;
           width: 70px;
           height: 40px;
         "
@@ -401,6 +421,16 @@
       style=" position: absolute;  left: 90%; margin-top: 0.7%; border: 0px;color:  rgb(100, 212, 100); width: 70px;height: 40px"></i>
     </div>
   </div>
+  <i   style="
+  position: absolute;
+  left: 88%;
+  margin-top: 0.05%;
+  border: 0px;
+  color: rgb(100, 212, 100);
+  width: 270px;
+  height: 240px;
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'Europe'" (click)="ajoutMosquee('eu')"> Ajouter Mosquee</i>
+
   <div *ngIf="display === 'Europe'" >
     <h1 style="width:300px">Europe</h1>
     <div style="border: 1px solid gray; margin: 2%"></div>
@@ -418,12 +448,20 @@
         {{ mosquee.UserId }}
       </h3>
       <h3 style="position: absolute; left: 65% ; width:200px">{{ mosquee.street }}</h3>
-
+      <i   style="
+      position: absolute;
+      left: 86%;
+      margin-top: 0.7%;
+      border: 0px;
+      color: rgb(100, 212, 100);
+      width: 270px;
+      height: 240px;
+    "class="fa fa-plus" title="ajouter Prop"  (click)="ajoutPEu(mosquee.id)"></i>
       <i  class="fa fa-trash"
         (click)="deleteMosqueeEu(mosquee.id)"
         style="
           position: absolute;
-          left: 87%;
+          left: 88%;
           margin-top: 0.7%;
           border: 0px;
           color: red;
@@ -444,6 +482,15 @@
       "></i>
     </div>
   </div>
+  <i   style="
+  position: absolute;
+  left: 88%;
+  margin-top: 0.05%;
+  border: 0px;
+  color: rgb(100, 212, 100);
+  width: 270px;
+  height: 240px;
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'Asia'" (click)="ajoutMosquee('as')"> Ajouter Mosquee</i>
 
   <div *ngIf="display === 'Asia'" >
     <h1 >Asie</h1>
@@ -462,12 +509,20 @@
         {{ mosquee.UserId }}
       </h3>
       <h3 style="position: absolute; left: 65% ;width:200px">{{ mosquee.street }}</h3>
-
+      <i   style="
+      position: absolute;
+      left: 86%;
+      margin-top: 0.7%;
+      border: 0px;
+      color: rgb(100, 212, 100);
+      width: 270px;
+      height: 240px;
+    "class="fa fa-plus" title="ajouter Prop"  (click)="ajoutPAs(mosquee.id)"></i>
       <i  class="fa fa-trash"
         (click)="deleteMosqueeAs(mosquee.id)"
         style="
           position: absolute;
-          left: 87%;
+          left: 88%;
           margin-top: 0.7%;
           border: 0px;
           color: red;
@@ -488,6 +543,16 @@
     "></i>
     </div>
   </div>
+  <i   style="
+  position: absolute;
+  left: 88%;
+  margin-top: 0.05%;
+  border: 0px;
+  color: rgb(100, 212, 100);
+  width: 270px;
+  height: 240px;
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'ameriqueN'" (click)="ajoutMosquee('na')"> Ajouter Mosquee</i>
+
   <div *ngIf="display === 'ameriqueN'" >
     <h1>Amerique du Nord</h1>
     <div style="border: 1px solid gray; margin: 2%"></div>
@@ -505,12 +570,20 @@
         {{ mosquee.UserId }}
       </h3>
       <h3 style="position: absolute; left: 65%;width:200px">{{ mosquee.street }}</h3>
-
+      <i   style="
+      position: absolute;
+      left: 86%;
+      margin-top: 0.7%;
+      border: 0px;
+      color: rgb(100, 212, 100);
+      width: 270px;
+      height: 240px;
+    "class="fa fa-plus"  title="ajouter Prop"  (click)="ajoutPAmN(mosquee.id)"></i>
       <i  class="fa fa-trash"
         (click)="deleteMosqueeAmN(mosquee.id)"
         style="
           position: absolute;
-          left: 87%;
+          left: 88%;
           margin-top: 0.7%;
           border: 0px;
           color: red;
@@ -532,6 +605,16 @@
     </div>
   </div>
   <!-- chart -->
+  <i   style="
+  position: absolute;
+  left: 88%;
+  margin-top: 0.05%;
+  border: 0px;
+  color: rgb(100, 212, 100);
+  width: 270px;
+  height: 240px;
+"class="fa fa-plus" aria-hidden="true" *ngIf="display === 'ameriqueS'" (click)="ajoutMosquee('sa')"> Ajouter Mosquee</i>
+
   <div *ngIf="display === 'ameriqueS'" >
     <h1>Amerique du Sud</h1>
     <div style="border: 1px solid gray; margin: 2%"></div>
@@ -549,12 +632,20 @@
         {{ mosquee.UserId }}
       </h3>
       <h3 style="position: absolute; left: 65%;width:200px">{{ mosquee.street }}</h3>
-
+      <i   style="
+      position: absolute;
+      left: 86%;
+      margin-top: 0.7%;
+      border: 0px;
+      color: rgb(100, 212, 100);
+      width: 270px;
+      height: 240px;
+    "class="fa fa-plus" title="ajouter Prop"  (click)="ajoutPAmS(mosquee.id)" ></i>
       <i  class="fa fa-trash"
         (click)="deleteMosqueeAmS(mosquee.id)"
         style="
           position: absolute;
-          left: 87%;
+          left: 88%;
           margin-top: 0.7%;
           border: 0px;
           color: red;

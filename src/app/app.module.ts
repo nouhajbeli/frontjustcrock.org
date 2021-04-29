@@ -58,6 +58,7 @@ import { DetailsProfilComponent } from './details-profil/details-profil.componen
 import { FileUploadModule } from "ng2-file-upload";
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ToastrModule } from 'ngx-toastr';
+import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,7 @@ import { ToastrModule } from 'ngx-toastr';
     EditMosqueComponent,
     MosqueDetailsComponent,
     DetailsProfilComponent,
-
+    AddPropMosqueComponent
 
   ],
   imports: [

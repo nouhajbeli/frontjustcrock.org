@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
   result: any;
   proprietaires:any
   webmasters:any
-
+  role=localStorage.getItem('role')
   constructor(private userService:UserService,private router: Router, private _service:ApiserviceService) {}
 
   ngOnInit() {
@@ -260,7 +260,7 @@ ajoutUser(){
 
   }
   editMosqueeAmS(id:any){
-    this.router.navigate(['/updateMosque',  { id: id,code:"as"}])
+    this.router.navigate(['/updateMosque',  { id: id,code:"sa"}])
 
   }
   editMosqueeEu(id:any){
@@ -283,9 +283,30 @@ ajoutUser(){
 
   }
   getMosqueeAmS(id:any){
-    this.router.navigate(['/mosqueDetails',{id:id,code:"as"}])
+    this.router.navigate(['/mosqueDetails',{id:id,code:"sa"}])
 
   }
+  ajoutPAf(id:any){
+    this.router.navigate(['/addPropMosque',{id:id,code:"af"}])
+
+  }
+  ajoutPEu(id:any){
+    this.router.navigate(['/addPropMosque',{id:id,code:"eu"}])
+
+  }
+  ajoutPAs(id:any){
+    this.router.navigate(['/addPropMosque',{id:id,code:"as"}])
+
+  }
+  ajoutPAmN(id:any){
+    this.router.navigate(['/addPropMosque',{id:id,code:"na"}])
+
+  }
+  ajoutPAmS(id:any){
+    this.router.navigate(['/addPropMosque',{id:id,code:"sa"}])
+
+  }
+
   deleteuser(id:any){
 this.userService.deleteService(id).subscribe((data)=>{
   this.userService.getAllService().subscribe((res:any) => {
@@ -307,10 +328,14 @@ this.userService.deleteService(id).subscribe((data)=>{
 
       });})
   }
+  ajoutMosquee(code:any){
+this.router.navigate(['add',code])
+  }
   Logout() {
     localStorage.clear();
     this.router.navigate(['']).then(() => {
       location.reload();
     });
   }
+
 }

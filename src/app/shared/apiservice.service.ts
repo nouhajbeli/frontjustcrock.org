@@ -45,16 +45,7 @@ export class ApiserviceService {
     return this.http.get("./assets/myjson/quranArFr.json");
   }
 
-  sendService(to: string, association: string, president: string, prenom: string, adresse: string, telephone: string) {
-    const body = new FormData();
-    body.append('to', to);
-    body.append('association', association);
-    body.append('president', president);
-    body.append('prenom', prenom);
-    body.append('adresse', adresse);
-    body.append('telephone', telephone);
-    return this.http.post(this.BASE_URL+"/mosquees/sendemail", body);
-  }
+
 
   addService(
   body:any
@@ -68,7 +59,7 @@ export class ApiserviceService {
          code:"af",
          idMosque:id
        }
-       return this.http.put(this.BASE_URL+"v/mosque/deleteMosque", body);
+       return this.http.put(this.BASE_URL+"/mosque/deleteMosque", body);
 
    }
    deleteServiceAs(id:any){
@@ -94,7 +85,7 @@ export class ApiserviceService {
    }
    deleteServiceAmS(id:any){
     const body={
-      code:"as",
+      code:"sa",
       idMosque:id
     }
     return this.http.put(this.BASE_URL+"/mosque/deleteMosque", body);
@@ -103,6 +94,9 @@ export class ApiserviceService {
     return this.http.put(this.BASE_URL+"/mosque/updateMosque",body)
 
    }
+   editService(body:any){
+    return this.http.put(this.BASE_URL+"/mosque/proprietaireAdd",body)
+     }
    revendiquer(formData){
     return this.http.post("http://localhost:3000/api/contact/sendEmail",formData);
   }

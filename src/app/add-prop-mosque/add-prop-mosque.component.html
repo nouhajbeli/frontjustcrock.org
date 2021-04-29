@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="editmosque">
+  <img
+    src="https://i.pinimg.com/originals/f9/8a/2a/f98a2a89553928743140771f46e8b212.jpg"
+  />
+  <form class="form" *ngIf="this.addPropMosque" [formGroup]="addPropMosque" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>User :</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="idUser"
+          placeholder="..."
+        />
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" >
+      Enregistrer les modifications
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

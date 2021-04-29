@@ -46,8 +46,7 @@ export class NewpasswordComponent implements OnInit {
       console.log(err)
       this.toastr.error(err.error.error)
 
-      //  this.serverErrorMessages=err.error.message
-      //  console.log(err)
+    
     }
   )
   }

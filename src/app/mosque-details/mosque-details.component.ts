@@ -14,14 +14,17 @@ export class MosqueDetailsComponent implements OnInit {
 mosquee:Mosquee
 id:any
 code:any
-  constructor( private router : Router,private MosqueService:ApiserviceService,private activateroute: ActivatedRoute,) { }
+  constructor( private router : Router,private MosqueService:ApiserviceService,private activateroute: ActivatedRoute,) {
+    this.mosquee=new Mosquee
+   }
 
   ngOnInit(): void {
     this.id= this.activateroute.snapshot.params.id;
     this.code= this.activateroute.snapshot.params.code;
 
     this.MosqueService.getMosqueById(this.id,this.code).subscribe((data:any)=>{
-          this.mosquee=data
+          this.mosquee=data.foundMosque
+          console.log(this.mosquee)
       if(this.mosquee.imageUrl===null){
         this.mosquee.imageUrl="https://res.cloudinary.com/dtl8igxn0/image/upload/v1618913260/icons_mosque_vide_gcujgn.svg"
       }else {

@@ -29,6 +29,7 @@ import { EditMosqueComponent } from './edit-mosque/edit-mosque.component';
 import {MosqueDetailsComponent} from './mosque-details/mosque-details.component'
 import { DetailsProfilComponent } from './details-profil/details-profil.component';
 import { ListMosqueeComponent } from './list-mosquee/list-mosquee.component';
+import { AddPropMosqueComponent } from './add-prop-mosque/add-prop-mosque.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'revendiquermosque/:idm', component: RevendiquermosqueComponent },
   { path: 'recitations', component: RecitateursComponent },
   { path: 'conditionsgenerales', component: ConditiongeneraleComponent },
+  { path: 'addPropMosque', component: AddPropMosqueComponent },
   {
     path: 'aboutUs',
    component: AboutUsComponent },
@@ -73,7 +75,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'add',
+    path: 'add/:code',
     component: AddComponent,
   },
   {

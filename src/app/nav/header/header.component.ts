@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
    showMenu=false;
    menubar:any;
    role=localStorage.getItem('role')
-   
+   token=localStorage.getItem('token')
+
   constructor(public location: Location, private element : ElementRef,private userService:UserService,private router:Router) {
       this.sidebarVisible = false;
   }

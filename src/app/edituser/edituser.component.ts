@@ -48,7 +48,7 @@ export class EdituserComponent implements OnInit {
                   idUser:[data.id],
                   codePostal:[data.codePostal],
                   adresse:[data.adresse],
-                    pays:[data.pays],
+                  pays:[data.pays],
                   role:[data.role],
 
               }
@@ -62,10 +62,10 @@ get f() { return this.registerForm.controls; }
   onSubmit(){
     this.submitted = true;
     console.log(this.registerForm.value)
-    if (this.registerForm.invalid) {
-      console.log('error')
-        return;
-    }
+    // if (this.registerForm.invalid) {
+    //   console.log('error')
+    //     return;
+    // }
 
     // display form values on success
    this.UserService.editServiceUser(this.registerForm.value)
