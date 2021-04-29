@@ -26,6 +26,7 @@
     "@types/leaflet.markercluster": "^1.4.4",
     "angular-bootstrap-md": "^11.0.0",
     "angular-font-awesome": "^3.1.2",
+    "angular-ng-autocomplete": "^2.0.5",
     "angular-responsive-carousel": "^2.0.2",
     "angular2-materialize": "^15.1.10",
     "bootstrap": "^4.6.0",
