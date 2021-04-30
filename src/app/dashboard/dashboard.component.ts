@@ -116,7 +116,6 @@ export class DashboardComponent implements OnInit {
         }
     }
     this.result = arr;
-console.log('res',this.result)
 
   }else if (this.display === 'proprietaires') {
     var arr:any = [];
@@ -198,7 +197,6 @@ ajoutUser(){
 }
   deleteMosqueeAf(id: any) {
     this._service.deleteServiceAf(id).subscribe((data)=>{
-      console.log(data)
       this._service.getMosqueesAf().subscribe(
         (data:any)=>{
           this.mosqueesAf= data;
@@ -209,21 +207,17 @@ ajoutUser(){
   }
   deleteMosqueeAs(id:any){
     this._service.deleteServiceAs(id).subscribe((data)=>{
-      console.log(data)
       this._service.getMosqueesAs().subscribe(
         (data:any)=>{
           this.mosqueesAs= data;
-          console.log(this.mosqueesAs)
            })
     })
   }
   deleteMosqueeEu(id:any){
     this._service.deleteServiceEu(id).subscribe((data)=>{
-      console.log(data)
       this._service.getMosqueesEu().subscribe(
         (data:any)=>{
           this.mosqueesEu= data;
-          console.log(this.mosqueesEu)
            })
     })
   }
@@ -233,17 +227,14 @@ ajoutUser(){
       this._service.getMosqueesAmN().subscribe(
         (data:any)=>{
           this.mosqueesAmN= data;
-          console.log(this.mosqueesAmN)
            })
     })
   }
   deleteMosqueeAmS(id:any){
     this._service.deleteServiceAmS(id).subscribe((data)=>{
-      console.log(data)
       this._service.getMosqueesAmS().subscribe(
         (data:any)=>{
           this.mosqueesAmN= data;
-          console.log(this.mosqueesAmN)
            })
     })
   }
