@@ -42,7 +42,7 @@
         (click)="oppmenu1()"
         class="menu-link "
         routerLink="/dashboard"
-        *ngIf="role !== 'user' && role !=='propriétaire'"
+        *ngIf="role !== 'user' && role !=='propriétaire' && role !== null"
         >Dashboard</a
       >
 
